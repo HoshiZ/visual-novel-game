@@ -1,0 +1,110 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\Component1.cs" />
+    <Compile Remove="ViewModels\Component1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Font\汉仪润圆-75W.ttf" />
+    <None Remove="Resources\image\avatar\elaina_avatar.png" />
+    <None Remove="Resources\image\avatar\Litang Dingzhen_avatar.png" />
+    <None Remove="Resources\image\avatar\Rin HoshiZora_avatar.png" />
+    <None Remove="Resources\image\avatar\Tsubasa Kido_avatar.png" />
+    <None Remove="Resources\image\elaina_full.png" />
+    <None Remove="Resources\image\full\Elaina_1.png" />
+    <None Remove="Resources\image\full\Elaina_2.png" />
+    <None Remove="Resources\image\full\elaina_full.png" />
+    <None Remove="Resources\image\full\hoshizorarin_full.png" />
+    <None Remove="Resources\image\full\Litang Dingzhen_1.png" />
+    <None Remove="Resources\image\full\Litang Dingzhen_2.png" />
+    <None Remove="Resources\image\full\litangdingzhen_full.png" />
+    <None Remove="Resources\image\full\Rin Hoshizora_1.png" />
+    <None Remove="Resources\image\full\Rin Hoshizora_2.png" />
+    <None Remove="Resources\image\full\Tsubasa Kido_1.png" />
+    <None Remove="Resources\image\full\Tsubasa Kido_2.png" />
+    <None Remove="Resources\image\full\tsubasa_full.png" />
+    <None Remove="Resources\image\ico\favicon.ico" />
+    <None Remove="Resources\image\litangdingzhen_full.png" />
+    <None Remove="Resources\image\tsubasa_full.png" />
+    <None Remove="Resources\Music\BEYOND.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Music\BEYOND.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\image\full\Elaina_1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0-ci368" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.12" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\GameControls\" />
+    <Folder Include="ViewModels\GameControlViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VisualNovelGameDB\VisualNovelGameDB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Font\汉仪润圆-75W.ttf" />
+    <Resource Include="Resources\image\avatar\Elaina_avatar.png" />
+    <Resource Include="Resources\image\avatar\Rin Hoshizora_avatar.png" />
+    <Resource Include="Resources\image\avatar\Litang Dingzhen_avatar.png" />
+    <Resource Include="Resources\image\avatar\Tsubasa Kido_avatar.png" />
+    <Resource Include="Resources\image\full\Litang Dingzhen_1.png" />
+    <Resource Include="Resources\image\full\Litang Dingzhen_2.png" />
+    <Resource Include="Resources\image\full\Elaina_2.png" />
+    <Resource Include="Resources\image\full\Rin Hoshizora_1.png" />
+    <Resource Include="Resources\image\full\Rin Hoshizora_2.png" />
+    <Resource Include="Resources\image\full\Tsubasa Kido_1.png" />
+    <Resource Include="Resources\image\full\Tsubasa Kido_2.png" />
+    <Resource Include="Resources\image\ico\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Settings\SystemSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Settings\UserHabitSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

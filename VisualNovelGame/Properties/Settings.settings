@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VisualNovelGame.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HeaderDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Display</Value>
+    </Setting>
+    <Setting Name="connectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1522))(CONNECT_DATA=(SERVICE_NAME=visual_novel_game_ceshi)));User ID=HOSHIZ;Password=1707</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

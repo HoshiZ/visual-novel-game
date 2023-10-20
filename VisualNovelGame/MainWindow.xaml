@@ -1,0 +1,16 @@
+﻿<Window x:Class="VisualNovelGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VisualNovelGame"
+        xmlns:Views="clr-namespace:VisualNovelGame.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        mc:Ignorable="d"
+        Title="Summer Pocket" Height="{Binding Height}" Width="{Binding Width}"
+        Icon="pack://application:,,,/Resources/image/ico/favicon.ico"
+        >
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="MainWindowRegion" />
+    </Grid>
+</Window>

@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="VisualNovelGame.Controls.GameControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VisualNovelGame.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:ct="clr-namespace:VisualNovelGame.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ct:HalfSizeConverter x:Key="HalfSizeConverter" />
+
+        <Style x:Key="IconButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
+                            <materialDesign:PackIcon Kind="Cog" x:Name="IconContent" Width="24" Height="24" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="1" Source="{Binding FullImageSource}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Bottom" 
+               Stretch="Uniform"
+               />
+
+        <Grid Grid.Row="0" Grid.RowSpan="2">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <i:InvokeCommandAction Command="{Binding LeftClickEvent}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="630*" />
+                <RowDefinition Height="250*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1660*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                <TextBlock>画面页面</TextBlock>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="310*" />
+                    <ColumnDefinition Width="940*" />
+                    <ColumnDefinition Width="310*" />
+                </Grid.ColumnDefinitions>
+
+                <Rectangle Grid.Column="0" Grid.ColumnSpan="3" Stretch="Fill">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                            <GradientStop Color="SkyBlue" Offset="0" />
+                            <GradientStop Color="Transparent" Offset="1" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110*" />
+                        <ColumnDefinition Width="200*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="1" x:Name="avatar">
+                        <Image     Source="{Binding AvatarImageSource}"
+                                   Width="{Binding ActualWidth, ElementName=avatar}"
+                                   Height="{Binding ActualWidth, ElementName=avatar}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Stretch="Uniform" />
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*" />
+                        <RowDefinition Height="175*" />
+                        <RowDefinition Height="25*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="940*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="130*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80*" />
+                            <ColumnDefinition Width="780*" />
+                            <ColumnDefinition Width="80*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <TextBlock Text="{Binding CharacterName}" />
+                        </Grid>
+
+                        <Grid Grid.Row="1" Grid.Column="1" Margin="10 10 10 10">
+                            <TextBlock Text="{Binding StoryText}" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="2">
+                        <Viewbox>
+                            <Button Style="{StaticResource IconButtonStyle}" Command="{Binding SettingsCommand}">
+                                <Button.Content>
+                                    <materialDesign:PackIcon Kind="Cog" />
+                                </Button.Content>
+                            </Button>
+                        </Viewbox>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <TextBlock>右边区域</TextBlock>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</UserControl>

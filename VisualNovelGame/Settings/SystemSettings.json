@@ -1,0 +1,228 @@
+{
+  "SystemSetting": {
+
+    "Display": {
+      "WindowType": true,
+      "AspectRatio": true,
+      "VisualEffects": true,
+      "Animation": true,
+      "ESCKeyFunction": true,
+      "PanicButton": {
+        "Minimize": true,
+        "Image1": false,
+        "Image2": false,
+        "CustomImage": false
+      },
+      "AlwaysOnTop": true,
+      "UIDisplay": {
+        "ProgressIcon": true,
+        "ProgressMeter": true,
+        "WindowMenu": true,
+        "TouchUI": true
+      },
+      "ChapterDisplay": {
+        "Off": true,
+        "Value": 0,
+        "On": false
+      },
+      "MusicTitleDisplay": {
+        "Off": true,
+        "Value": 0,
+        "On": false
+      },
+      "CharacterPortraits": true,
+      "ShowPop_upWindow": {
+        "Mouse_over": true,
+        "RightClick": false
+      }
+    },
+
+    "
+      ": {
+      "AutoSkipOrjumpOverReadText": true,
+      "AutoSkipOrjumpSetting": {
+        "Skip": false,
+        "Junp": true
+      },
+      "AutoCursor": true,
+      "AutoCursorDefaultOption": true,
+      "HideMouseCursor": {
+        "Never": true,
+        "FiveSeconds": false,
+        "TenSeconds": false,
+        "TwentySeconds": false
+      },
+      "SaveOrloadConfirmation": {
+        "DoubleClick": false,
+        "SingleClick": true
+      },
+      "ShowUnreadScenesInFlowchart": true,
+      "WhenWindowInInactive": true,
+      "TaskbarPreview": true,
+      "Suspend": true
+    },
+
+    "General2": {
+      "GameSpeed": {
+        "Value": 1,
+        "Max": false
+      },
+      "VoicePlaybackSpeed": {
+        "Value": 1
+      },
+      "SkipSpeed": {
+        "Value": 1,
+        "Max": false
+      },
+      "SkipStyle": {
+        "Normal": true,
+        "Fast": false,
+        "Text": false
+      },
+      "RightClickSkipsMovies": true,
+      "SkipMoviesDuringSkipMode": false,
+      "DramaticMode": {
+        "VoicedLines": {
+          "AlwaysShow": true,
+          "HideInAuto_mode": false,
+          "AlwaysHide": false
+        },
+        "ProtagonistsLines": {
+          "AlwaysShow": true,
+          "HideInAuto_mode": false,
+          "AlwaysHide": false
+        },
+        "OtherLines": {
+          "AlwaysShow": true,
+          "HideInAuto_mode": false,
+          "AlwaysHide": false
+        }
+      },
+      "ScreenshotSettings": {
+        "DateOrtime": false,
+        "InputFilename": true
+      }
+    },
+
+    "Text": {
+      "TextSpeed": 0,
+      "AutoModeSpeed": 0,
+      "TimePerCharacter": 0,
+      "AutoModeType": {
+        "Normal": false,
+        "Voice": true,
+        "Speed": false
+      },
+      "SkipUnreadText": false,
+      "SkipModeAfterChoice": true,
+      "CtrlSkip": true,
+      "AutoModeAfterChoice": true,
+      "TextSettingsWithColor": {
+        "TextBox": {
+          "Color": 0
+        },
+        "OtherPOV": {
+          "Color": 0
+        },
+        "UnreadText": {
+          "Color": 0
+        },
+        "ReadText": {
+          "Color": 0
+        },
+        "TextBoxOpacity": 0
+      }
+    },
+
+    "Sound": {
+      "MasterVolumn": 0,
+      "BGM": 0,
+      "BGMDuringVoicPlayback": 0,
+      "SFX": 0,
+      "Movie": 0,
+      "SystemSFX": 0,
+      "SystemVoice": 0,
+      "System": {
+        "SoundEffect": true,
+        "Character": true,
+        "Individual": {
+          "SystemVoiceSettings": {
+            "Disclaimer": true,
+            "TitleScreen": true,
+            "Save": true,
+            "FavoritedVoices": true,
+            "Backlog": true,
+            "Settings": true,
+            "Extra": true,
+            "Dialog": true,
+            "Logos": true,
+            "Bindings": true,
+            "Load": true,
+            "AddFavorite": true,
+            "FlowChart": true,
+            "SettingsTabs": true,
+            "Quit": true
+          },
+          "CharacterVoice": {
+
+          }
+        }
+      },
+      "Voice": 0,
+      "CharacterVolumes": {
+        "Rino": 0,
+        "Tsubasa": 0
+      },
+      "CutVoicePlayBackOnTextAdvance": true
+    },
+
+    "Dialog": {
+      "Saving": true,
+      "Overwriting": true,
+      "DirectSave": true,
+      "Loading": true,
+      "Quicksaving": true,
+      "QuiclLoading": true,
+      "ReturningToTitle": true,
+      "JumpingFromBacklog": true,
+      "JumpingFromFlowchart": true,
+      "JumpingToTheNextChoice": true,
+      "JumpingToThePreviousChoice": true,
+      "JumpingToTheNextScene": true,
+      "JumpingToThePreviousScene": true,
+      "FavoritingAVoiceLine": true,
+      "ResettingToDefaultSettings": true,
+      "ResettingInSpriteMode": true,
+      "DeletingASave": true,
+      "MovingASave": true,
+      "CopyingASave": true,
+      "ClosingTheGame": true,
+      "SuspendingTheGame": true
+    },
+
+    "Mouse": {
+      "MouseGestures": {
+      }
+    },
+
+    "Keyboard": {
+      "Save": {
+        "ShortCutKey1": {
+          "Modifier": [ "Shift", "Ctrl" ],
+          "Key": "5"
+        },
+        "ShortCutKey2": {
+          "Modifier": null,
+          "Key": "5"
+        }
+      },
+      "Load": {
+
+      }
+    },
+
+    "GamePad": {
+
+    }
+  }
+}
