@@ -8,5 +8,8 @@
     <Setting Name="connectionString" Type="System.String" Scope="User">
       <Value Profile="(Default)">Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1522))(CONNECT_DATA=(SERVICE_NAME=visual_novel_game_ceshi)));User ID=HOSHIZ;Password=1707</Value>
     </Setting>
+    <Setting Name="CurrentLanguage" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

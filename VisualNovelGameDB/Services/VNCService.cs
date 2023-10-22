@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,16 +18,23 @@ namespace VisualNovelGameDB.Services
         private GameDataModels _gameDataModels;
         private int _currentIndex = 1;
         private int _maxIndex = 100;
+        private int _isInitial = 0;
         public VNCService() 
         {
             _repository = new VNGRepository();
-            InitialGameDataModels();
         }
 
-        private void InitialGameDataModels()
+        private void InitialGameDataModels(string language)
         {
             var result = new GameDataModels();
             var mainlineDialogue = _repository.GetMainlineDialogues();
+
+            string lan = null;
+
+            if (language == "Chinese") lan = "cn";
+            else if (language == "English") lan = "en";
+            else if (language == "Japanese") lan = "jp";
+            else lan = "zh";
             result = new GameDataModels
             {
                 Scene = _repository.GetSceneFromDialog(mainlineDialogue),
@@ -35,18 +43,25 @@ namespace VisualNovelGameDB.Services
                 //ChoiceOption = 
                 //IsBGMChange = 
                 BGM = _repository.GetBGMPathFromDialog(mainlineDialogue),
-                CharacterName = _repository.GetCharacterNameFromDialog(mainlineDialogue, "cn"),
+                CharacterName = _repository.GetCharacterNameFromDialog(mainlineDialogue, lan),
                 CharacterImages = _repository.GetCharacterImagePathFromDialog(mainlineDialogue),
-                Text = _repository.GetTextFromDialog(mainlineDialogue, "cn"),
+                Text = _repository.GetTextFromDialog(mainlineDialogue, lan),
                 HaveRead = _repository.GetHaveReadFromDialog(mainlineDialogue),
                 Chapter = _repository.GetChapterFromDialog(mainlineDialogue),
-                CharacterAvatar = _repository.GetCharacterNameFromDialog(mainlineDialogue, "en")
+                CharacterAvatar = _repository.GetCharacterNameFromDialog(mainlineDialogue, lan)
             };
             _gameDataModels = result;
         }
 
-        public GameDataModel GetGameDataModel()
+
+        public GameDataModel GetGameDataModel(string language)
         {
+            if (_isInitial == 0)
+            {
+                InitialGameDataModels(language);
+                _isInitial = 1;
+            }
+
             if (_currentIndex >= _gameDataModels.Scene.Count())
             {
                 return null;

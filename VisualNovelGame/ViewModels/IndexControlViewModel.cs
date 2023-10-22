@@ -2,15 +2,9 @@
 using Prism.Mvvm;
 using Prism.Regions;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows;
-using System.Windows.Automation.Provider;
-using VisualNovelGame.Controls;
+using VisualNovelGame.Resources.Languages;
 
 namespace VisualNovelGame.ViewModels
 {
@@ -18,47 +12,33 @@ namespace VisualNovelGame.ViewModels
     {
         // 服务
         private readonly IRegionManager _regionManager;
+        private LanguageState languageSettingState = (LanguageState)Properties.Settings.Default.CurrentLanguage;
 
-        public ObservableCollection<ButtonModel> Buttons { get; set; }
         private DelegateCommand<string> _indexTogoCommand;
         public DelegateCommand<string> IndexTogoCommand =>
             _indexTogoCommand ?? (_indexTogoCommand = new DelegateCommand<string>(ExecuteIndexTogoCommand));
-
-        public class ButtonModel
-        {
-            public string Content { get; set; }
-            public string CommandParameter { get; set; }
-        }
-
 
         // 构造函数
         public IndexControlViewModel(IRegionManager regionManager)
         {
             _regionManager = regionManager;
+            SwitchLanguageCommand = new DelegateCommand(switchLanguage);
 
-            Buttons = new ObservableCollection<ButtonModel>
-            {
-                new ButtonModel { Content = "序章", CommandParameter = "Prologue" },
-                new ButtonModel { Content = "新游戏", CommandParameter = "NewGame" },
-                new ButtonModel { Content = "读取存档", CommandParameter = "Load" },
-                new ButtonModel { Content = "继续游戏", CommandParameter = "Continue" },
-                new ButtonModel { Content = "流程图", CommandParameter = "Flowchart" },
-                new ButtonModel { Content = "鉴赏模式", CommandParameter = "Extra" },
-                new ButtonModel { Content = "后日谈", CommandParameter = "After" },
-                new ButtonModel { Content = "系统设置", CommandParameter = "System" },
-                new ButtonModel { Content = "结束游戏", CommandParameter = "Quit" },
-                new ButtonModel { Content = "Simplified Chinese", CommandParameter = "Language" },
-            };
+            InitialPageLanguage();
+        }
+
+        public void InitialPageLanguage()
+        {
+            string code = languageSettingState.ToCode();
+            Language.Strings.Culture = new CultureInfo(code);
+            CurrentLanguage = languageSettingState;
+            UpdateStrings();
         }
 
         // 首页按钮点击事件
         private void ExecuteIndexTogoCommand(string page)
         {
-            if (page == "Prologue")
-            {
-
-            }
-            else if (page == "NewGame")
+            if (page == "NewGame")
             {
                 // 开始游戏
                 // 使MainView清空所有视图并导航到GameView
@@ -71,22 +51,6 @@ namespace VisualNovelGame.ViewModels
             {
 
             }
-            else if (page == "Continue")
-            {
-
-            }
-            else if (page == "FlowChart")
-            {
-
-            }
-            else if (page == "Extra")
-            {
-
-            }
-            else if (page == "After")
-            {
-
-            }
             else if (page == "System")
             {
                 // 系统
@@ -94,7 +58,8 @@ namespace VisualNovelGame.ViewModels
                 var parameters = new NavigationParameters();
                 parameters.Add("ReturnRegion", "IndexViewRegion");
                 parameters.Add("ReturnView", "IndexControl");
-                _regionManager.RequestNavigate("IndexViewRegion", "SystemSettingsView", parameters);
+                //_regionManager.RequestNavigate("IndexViewRegion", "SystemSettingsView", parameters);
+                
             }
             else if (page == "Quit")
             {
@@ -102,10 +67,56 @@ namespace VisualNovelGame.ViewModels
             }
             else if (page == "Language")
             {
-
+                CurrentLanguage = (LanguageState)(((int)CurrentLanguage + 1) % Enum.GetNames(typeof(LanguageState)).Length);
+                UpdateStrings();
             }
         }
 
 
+        // 首页ToggleButton三状态
+        public enum LanguageState
+        {
+            Chinese,
+            English,
+            Japanese
+        };
+        
+        public LanguageState CurrentLanguage
+        {
+            get { return languageSettingState; }
+            set
+            {
+                if (languageSettingState != value)
+                {
+                    SetProperty(ref languageSettingState, value);
+                    Properties.Settings.Default.CurrentLanguage = (int)CurrentLanguage;
+                    Properties.Settings.Default.Save();
+                    string code = CurrentLanguage.ToCode();
+                    UpdateStrings();
+                    Language.Strings.Culture = new CultureInfo(code);
+                }
+            }
+        }
+
+        public void UpdateStrings()
+        {
+            RaisePropertyChanged(nameof(NewGame));
+            RaisePropertyChanged(nameof(LanguageChange));
+            RaisePropertyChanged(nameof(Load));
+            RaisePropertyChanged(nameof(System));
+            RaisePropertyChanged(nameof(Quit));
+        }
+
+        public string NewGame => Language.Strings.NewGame;
+        public string LanguageChange => Language.Strings.Language;
+        public string Load => Language.Strings.Load;
+        public string System => Language.Strings.System;
+        public string Quit => Language.Strings.Quit;
+
+        public DelegateCommand SwitchLanguageCommand { get; }
+        private void switchLanguage()
+        {
+            CurrentLanguage = (LanguageState)(((int)CurrentLanguage + 1) % Enum.GetNames(typeof(LanguageState)).Length);
+        }
     }
 }

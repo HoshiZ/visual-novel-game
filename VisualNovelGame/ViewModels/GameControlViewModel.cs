@@ -78,7 +78,7 @@ namespace VisualNovelGame.ViewModels
             //{
             //    return;
             //}
-            var data = _VNCService.GetGameDataModel();
+            var data = _VNCService.GetGameDataModel(Language.Strings.Language);
             if (data != null)
             {
                 StoryText = data.Text;

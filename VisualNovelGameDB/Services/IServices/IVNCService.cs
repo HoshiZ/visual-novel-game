@@ -9,6 +9,6 @@ namespace VisualNovelGameDB.Services.IServices
 {
     public interface IVNCService
     {
-        GameDataModel GetGameDataModel();
+        GameDataModel GetGameDataModel(string language);
     }
 }

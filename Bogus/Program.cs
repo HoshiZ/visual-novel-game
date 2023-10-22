@@ -299,8 +299,8 @@ namespace fake
                         var JPName = tancemiao.JPName;
                         var character = GetRandomCharacter();
                         string cn_text = $"第 {i} 行文本，角色 {CNName}说话了。";
-                        string en_text = $"第 {i} 行のテキスト、キャラクター {ENName} が話しています。";
-                        string jp_text = $"Line {i}, character {JPName} is speaking.";
+                        string en_text = $"Line {i}, character {JPName} is speaking.";
+                        string jp_text = $"第 {i} 行のテキスト、キャラクター {ENName} が話しています。";
                         
                         context.MainlineTexts.Add(new MainlineText { CNText = cn_text, ENText = en_text, JPText = jp_text });
                     }
