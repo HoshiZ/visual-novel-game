@@ -117,19 +117,241 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>Always on top</value>
+  </data>
+  <data name="Animation" xml:space="preserve">
+    <value>Animation</value>
+  </data>
+  <data name="AutoModeAfterChoice" xml:space="preserve">
+    <value>Auto mode after choice</value>
+  </data>
+  <data name="AutoModeAfterChoice_A" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="AutoModeAfterChoice_B" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="AutoModeSpeed" xml:space="preserve">
+    <value>Auto mode speed</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="BGM" xml:space="preserve">
+    <value>BGM</value>
+  </data>
+  <data name="BGMDuringVoicePlayback" xml:space="preserve">
+    <value>BGM during voice playback</value>
+  </data>
+  <data name="Button_OFF" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="Button_ON" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="ChapterDisplay" xml:space="preserve">
+    <value>Character display</value>
+  </data>
+  <data name="CharacterVolumns" xml:space="preserve">
+    <value>Character volumns</value>
+  </data>
+  <data name="CharacterVolumns_Elaina" xml:space="preserve">
+    <value>Elaina</value>
+  </data>
+  <data name="CharacterVolumns_Litangdingzhen" xml:space="preserve">
+    <value>Dingzhen</value>
+  </data>
+  <data name="CharacterVolumns_RinHoshizora" xml:space="preserve">
+    <value>Rin</value>
+  </data>
+  <data name="CharacterVolumns_Tsubasakido" xml:space="preserve">
+    <value>Tsubasa</value>
+  </data>
+  <data name="ClosingTheGame" xml:space="preserve">
+    <value>Closing the game</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color </value>
+  </data>
+  <data name="CtrlSkip" xml:space="preserve">
+    <value>Ctrl skip</value>
+  </data>
+  <data name="CtrlSkip_A" xml:space="preserve">
+    <value>Only read</value>
+  </data>
+  <data name="CtrlSkip_B" xml:space="preserve">
+    <value>Everything</value>
+  </data>
+  <data name="Defaults" xml:space="preserve">
+    <value>Defaults</value>
+  </data>
+  <data name="Dialog" xml:space="preserve">
+    <value>Dialog</value>
+  </data>
+  <data name="Diplay" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="ESCKeyFuncion_B" xml:space="preserve">
+    <value>Panic button</value>
+  </data>
+  <data name="ESCKeyFunction" xml:space="preserve">
+    <value>ESC key function</value>
+  </data>
+  <data name="ESCKeyFunction_A" xml:space="preserve">
+    <value>Right click</value>
+  </data>
+  <data name="GameSpeed" xml:space="preserve">
+    <value>Game speed</value>
+  </data>
+  <data name="General1" xml:space="preserve">
+    <value>General1</value>
+  </data>
+  <data name="General2" xml:space="preserve">
+    <value>General2</value>
+  </data>
+  <data name="HideMouseCursor" xml:space="preserve">
+    <value>Hide mouse cursor</value>
+  </data>
+  <data name="HideMouseCursor_A" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="HideMouseCursor_B" xml:space="preserve">
+    <value>5s</value>
+  </data>
+  <data name="HideMouseCursor_C" xml:space="preserve">
+    <value>10s</value>
+  </data>
+  <data name="HideMouseCursor_D" xml:space="preserve">
+    <value>15s</value>
+  </data>
   <data name="Language" xml:space="preserve">
-    <value>ceshi1</value>
+    <value>English</value>
   </data>
   <data name="Load" xml:space="preserve">
     <value>Load</value>
   </data>
+  <data name="MasterVolumn" xml:space="preserve">
+    <value>Master volumn</value>
+  </data>
   <data name="NewGame" xml:space="preserve">
-    <value>New Game</value>
+    <value>New game</value>
+  </data>
+  <data name="PanicButton" xml:space="preserve">
+    <value>Panic button</value>
+  </data>
+  <data name="PanicButton_A" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="PanicButton_B" xml:space="preserve">
+    <value>Image 1</value>
+  </data>
+  <data name="PanicButton_C" xml:space="preserve">
+    <value>Image 2</value>
+  </data>
+  <data name="PanicButton_D" xml:space="preserve">
+    <value>Custom image</value>
   </data>
   <data name="Quit" xml:space="preserve">
     <value>Quit</value>
   </data>
+  <data name="ResettingToDefaultSettings" xml:space="preserve">
+    <value>Resetting to default settings</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="ReturningToTitle" xml:space="preserve">
+    <value>Returning to title</value>
+  </data>
+  <data name="SkipModeAfterChoice" xml:space="preserve">
+    <value>Skip mode after choice</value>
+  </data>
+  <data name="SkipModeAfterChoice_A" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="SkipModeAfterChoice_B" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="SkipSpeed" xml:space="preserve">
+    <value>Skip speed</value>
+  </data>
+  <data name="SkipUnreadText" xml:space="preserve">
+    <value>Skip unread text</value>
+  </data>
+  <data name="SkipUnreadText_A" xml:space="preserve">
+    <value>Everything</value>
+  </data>
+  <data name="SkipUnreadText_B" xml:space="preserve">
+    <value>Only read</value>
+  </data>
+  <data name="Sound" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="SoundEffects" xml:space="preserve">
+    <value>Sound effects</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>System</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="TextBoxOpacity" xml:space="preserve">
+    <value>Text box opacity</value>
+  </data>
+  <data name="TextSettings" xml:space="preserve">
+    <value>Text settings</value>
+  </data>
+  <data name="TextSettings_A" xml:space="preserve">
+    <value>Text box</value>
+  </data>
+  <data name="TextSettings_B" xml:space="preserve">
+    <value>Other POV</value>
+  </data>
+  <data name="TextSettings_C" xml:space="preserve">
+    <value>Unread text</value>
+  </data>
+  <data name="TextSettings_D" xml:space="preserve">
+    <value>Read text</value>
+  </data>
+  <data name="TextSpeed" xml:space="preserve">
+    <value>Text speed</value>
+  </data>
+  <data name="TitleScreen" xml:space="preserve">
+    <value>Title screen</value>
+  </data>
+  <data name="UIDisplay" xml:space="preserve">
+    <value>UI display</value>
+  </data>
+  <data name="UIDisplay_A" xml:space="preserve">
+    <value>Progress icon</value>
+  </data>
+  <data name="UIDisplay_B" xml:space="preserve">
+    <value>Progress meter</value>
+  </data>
+  <data name="UIDisplay_C" xml:space="preserve">
+    <value>Window menu</value>
+  </data>
+  <data name="UIDisplay_D" xml:space="preserve">
+    <value>Touch UI</value>
+  </data>
+  <data name="VisualEffects" xml:space="preserve">
+    <value>Visual effects</value>
+  </data>
+  <data name="Voice" xml:space="preserve">
+    <value>Voice</value>
+  </data>
+  <data name="WindowSize" xml:space="preserve">
+    <value>Window size</value>
+  </data>
+  <data name="WindowSize_A" xml:space="preserve">
+    <value>Windowed</value>
+  </data>
+  <data name="WindowSize_B" xml:space="preserve">
+    <value>Fullscreen</value>
+  </data>
+  <data name="WindowType" xml:space="preserve">
+    <value>Window Type</value>
   </data>
 </root>

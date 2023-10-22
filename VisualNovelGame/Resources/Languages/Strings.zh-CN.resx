@@ -117,19 +117,241 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>游戏窗口始终在前</value>
+  </data>
+  <data name="Animation" xml:space="preserve">
+    <value>动画效果</value>
+  </data>
+  <data name="AutoModeAfterChoice" xml:space="preserve">
+    <value>选项过后是否解除自动模式</value>
+  </data>
+  <data name="AutoModeAfterChoice_A" xml:space="preserve">
+    <value>全部文本</value>
+  </data>
+  <data name="AutoModeAfterChoice_B" xml:space="preserve">
+    <value>仅已读</value>
+  </data>
+  <data name="AutoModeSpeed" xml:space="preserve">
+    <value>自动模式速度</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>简易设置</value>
+  </data>
+  <data name="BGM" xml:space="preserve">
+    <value>B G M</value>
+  </data>
+  <data name="BGMDuringVoicePlayback" xml:space="preserve">
+    <value>B G M （播放语音时）</value>
+  </data>
+  <data name="Button_OFF" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="Button_ON" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="ChapterDisplay" xml:space="preserve">
+    <value>章节编号显示时间</value>
+  </data>
+  <data name="CharacterVolumns" xml:space="preserve">
+    <value>单独设置每个角色的语音</value>
+  </data>
+  <data name="CharacterVolumns_Elaina" xml:space="preserve">
+    <value>伊蕾娜</value>
+  </data>
+  <data name="CharacterVolumns_Litangdingzhen" xml:space="preserve">
+    <value>丁真</value>
+  </data>
+  <data name="CharacterVolumns_RinHoshizora" xml:space="preserve">
+    <value>凛</value>
+  </data>
+  <data name="CharacterVolumns_Tsubasakido" xml:space="preserve">
+    <value>翼</value>
+  </data>
+  <data name="ClosingTheGame" xml:space="preserve">
+    <value>结束游戏时是否确认</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>颜色设置</value>
+  </data>
+  <data name="CtrlSkip" xml:space="preserve">
+    <value>Ctrl键快进方式</value>
+  </data>
+  <data name="CtrlSkip_A" xml:space="preserve">
+    <value>仅已读</value>
+  </data>
+  <data name="CtrlSkip_B" xml:space="preserve">
+    <value>全部文本</value>
+  </data>
+  <data name="Defaults" xml:space="preserve">
+    <value>恢复默认设置</value>
+  </data>
+  <data name="Dialog" xml:space="preserve">
+    <value>确认对话框</value>
+  </data>
+  <data name="Diplay" xml:space="preserve">
+    <value>画面显示</value>
+  </data>
+  <data name="ESCKeyFuncion_B" xml:space="preserve">
+    <value>老板键功能</value>
+  </data>
+  <data name="ESCKeyFunction" xml:space="preserve">
+    <value>ESC key function</value>
+  </data>
+  <data name="ESCKeyFunction_A" xml:space="preserve">
+    <value>右击</value>
+  </data>
+  <data name="GameSpeed" xml:space="preserve">
+    <value>游戏进行速度</value>
+  </data>
+  <data name="General1" xml:space="preserve">
+    <value>游戏设置1</value>
+  </data>
+  <data name="General2" xml:space="preserve">
+    <value>游戏设置2</value>
+  </data>
+  <data name="HideMouseCursor" xml:space="preserve">
+    <value>自动隐藏鼠标指针</value>
+  </data>
+  <data name="HideMouseCursor_A" xml:space="preserve">
+    <value>不隐藏</value>
+  </data>
+  <data name="HideMouseCursor_B" xml:space="preserve">
+    <value>5秒</value>
+  </data>
+  <data name="HideMouseCursor_C" xml:space="preserve">
+    <value>10秒</value>
+  </data>
+  <data name="HideMouseCursor_D" xml:space="preserve">
+    <value>15秒</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Chinese</value>
   </data>
   <data name="Load" xml:space="preserve">
-    <value>继续游戏</value>
+    <value>读取存档</value>
+  </data>
+  <data name="MasterVolumn" xml:space="preserve">
+    <value>主音量</value>
   </data>
   <data name="NewGame" xml:space="preserve">
     <value>新游戏</value>
   </data>
+  <data name="PanicButton" xml:space="preserve">
+    <value>老板键功能</value>
+  </data>
+  <data name="PanicButton_A" xml:space="preserve">
+    <value>最小化</value>
+  </data>
+  <data name="PanicButton_B" xml:space="preserve">
+    <value>图像1</value>
+  </data>
+  <data name="PanicButton_C" xml:space="preserve">
+    <value>图像2</value>
+  </data>
+  <data name="PanicButton_D" xml:space="preserve">
+    <value>用户指定</value>
+  </data>
   <data name="Quit" xml:space="preserve">
     <value>结束游戏</value>
   </data>
+  <data name="ResettingToDefaultSettings" xml:space="preserve">
+    <value>恢复系统默认设置时是否确认</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>回到游戏</value>
+  </data>
+  <data name="ReturningToTitle" xml:space="preserve">
+    <value>回到标题界面是否确认</value>
+  </data>
+  <data name="SkipModeAfterChoice" xml:space="preserve">
+    <value>选项过后是否解除快进</value>
+  </data>
+  <data name="SkipModeAfterChoice_A" xml:space="preserve">
+    <value>全部文本</value>
+  </data>
+  <data name="SkipModeAfterChoice_B" xml:space="preserve">
+    <value>仅已读</value>
+  </data>
+  <data name="SkipSpeed" xml:space="preserve">
+    <value>快进速度调整</value>
+  </data>
+  <data name="SkipUnreadText" xml:space="preserve">
+    <value>未读文本快进</value>
+  </data>
+  <data name="SkipUnreadText_A" xml:space="preserve">
+    <value>全部文本</value>
+  </data>
+  <data name="SkipUnreadText_B" xml:space="preserve">
+    <value>仅已读</value>
+  </data>
+  <data name="Sound" xml:space="preserve">
+    <value>音频设置</value>
+  </data>
+  <data name="SoundEffects" xml:space="preserve">
+    <value>Sound effects</value>
+  </data>
   <data name="System" xml:space="preserve">
     <value>系统设置</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文本设置</value>
+  </data>
+  <data name="TextBoxOpacity" xml:space="preserve">
+    <value>Text box opacity</value>
+  </data>
+  <data name="TextSettings" xml:space="preserve">
+    <value>窗口、文字设置</value>
+  </data>
+  <data name="TextSettings_A" xml:space="preserve">
+    <value>通常时窗口</value>
+  </data>
+  <data name="TextSettings_B" xml:space="preserve">
+    <value>更改视点时窗口</value>
+  </data>
+  <data name="TextSettings_C" xml:space="preserve">
+    <value>未读文本</value>
+  </data>
+  <data name="TextSettings_D" xml:space="preserve">
+    <value>已读文本</value>
+  </data>
+  <data name="TextSpeed" xml:space="preserve">
+    <value>文字速度</value>
+  </data>
+  <data name="TitleScreen" xml:space="preserve">
+    <value>返回标题页面</value>
+  </data>
+  <data name="UIDisplay" xml:space="preserve">
+    <value>功能区域开关</value>
+  </data>
+  <data name="UIDisplay_A" xml:space="preserve">
+    <value>Progress icon</value>
+  </data>
+  <data name="UIDisplay_B" xml:space="preserve">
+    <value>Progress meter</value>
+  </data>
+  <data name="UIDisplay_C" xml:space="preserve">
+    <value>Window menu</value>
+  </data>
+  <data name="UIDisplay_D" xml:space="preserve">
+    <value>Touch UI</value>
+  </data>
+  <data name="VisualEffects" xml:space="preserve">
+    <value>画面效果</value>
+  </data>
+  <data name="Voice" xml:space="preserve">
+    <value>游戏语音</value>
+  </data>
+  <data name="WindowSize" xml:space="preserve">
+    <value>显示模式</value>
+  </data>
+  <data name="WindowSize_A" xml:space="preserve">
+    <value>窗口</value>
+  </data>
+  <data name="WindowSize_B" xml:space="preserve">
+    <value>全屏</value>
+  </data>
+  <data name="WindowType" xml:space="preserve">
+    <value>显示模式</value>
   </data>
 </root>

@@ -61,7 +61,331 @@ namespace Language {
         }
         
         /// <summary>
-        ///   查找类似 ceshi1 的本地化字符串。
+        ///   查找类似 Always on top 的本地化字符串。
+        /// </summary>
+        public static string AlwaysOnTop {
+            get {
+                return ResourceManager.GetString("AlwaysOnTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Animation 的本地化字符串。
+        /// </summary>
+        public static string Animation {
+            get {
+                return ResourceManager.GetString("Animation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto mode after choice 的本地化字符串。
+        /// </summary>
+        public static string AutoModeAfterChoice {
+            get {
+                return ResourceManager.GetString("AutoModeAfterChoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Continue 的本地化字符串。
+        /// </summary>
+        public static string AutoModeAfterChoice_A {
+            get {
+                return ResourceManager.GetString("AutoModeAfterChoice_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stop 的本地化字符串。
+        /// </summary>
+        public static string AutoModeAfterChoice_B {
+            get {
+                return ResourceManager.GetString("AutoModeAfterChoice_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto mode speed 的本地化字符串。
+        /// </summary>
+        public static string AutoModeSpeed {
+            get {
+                return ResourceManager.GetString("AutoModeSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Basic 的本地化字符串。
+        /// </summary>
+        public static string Basic {
+            get {
+                return ResourceManager.GetString("Basic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 BGM 的本地化字符串。
+        /// </summary>
+        public static string BGM {
+            get {
+                return ResourceManager.GetString("BGM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 BGM during voice playback 的本地化字符串。
+        /// </summary>
+        public static string BGMDuringVoicePlayback {
+            get {
+                return ResourceManager.GetString("BGMDuringVoicePlayback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 OFF 的本地化字符串。
+        /// </summary>
+        public static string Button_OFF {
+            get {
+                return ResourceManager.GetString("Button_OFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ON 的本地化字符串。
+        /// </summary>
+        public static string Button_ON {
+            get {
+                return ResourceManager.GetString("Button_ON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Character display 的本地化字符串。
+        /// </summary>
+        public static string ChapterDisplay {
+            get {
+                return ResourceManager.GetString("ChapterDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Character volumns 的本地化字符串。
+        /// </summary>
+        public static string CharacterVolumns {
+            get {
+                return ResourceManager.GetString("CharacterVolumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Elaina 的本地化字符串。
+        /// </summary>
+        public static string CharacterVolumns_Elaina {
+            get {
+                return ResourceManager.GetString("CharacterVolumns_Elaina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dingzhen 的本地化字符串。
+        /// </summary>
+        public static string CharacterVolumns_Litangdingzhen {
+            get {
+                return ResourceManager.GetString("CharacterVolumns_Litangdingzhen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Rin 的本地化字符串。
+        /// </summary>
+        public static string CharacterVolumns_RinHoshizora {
+            get {
+                return ResourceManager.GetString("CharacterVolumns_RinHoshizora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tsubasa 的本地化字符串。
+        /// </summary>
+        public static string CharacterVolumns_Tsubasakido {
+            get {
+                return ResourceManager.GetString("CharacterVolumns_Tsubasakido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Closing the game 的本地化字符串。
+        /// </summary>
+        public static string ClosingTheGame {
+            get {
+                return ResourceManager.GetString("ClosingTheGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Color  的本地化字符串。
+        /// </summary>
+        public static string Color {
+            get {
+                return ResourceManager.GetString("Color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ctrl skip 的本地化字符串。
+        /// </summary>
+        public static string CtrlSkip {
+            get {
+                return ResourceManager.GetString("CtrlSkip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Only read 的本地化字符串。
+        /// </summary>
+        public static string CtrlSkip_A {
+            get {
+                return ResourceManager.GetString("CtrlSkip_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Everything 的本地化字符串。
+        /// </summary>
+        public static string CtrlSkip_B {
+            get {
+                return ResourceManager.GetString("CtrlSkip_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Defaults 的本地化字符串。
+        /// </summary>
+        public static string Defaults {
+            get {
+                return ResourceManager.GetString("Defaults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dialog 的本地化字符串。
+        /// </summary>
+        public static string Dialog {
+            get {
+                return ResourceManager.GetString("Dialog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Display 的本地化字符串。
+        /// </summary>
+        public static string Diplay {
+            get {
+                return ResourceManager.GetString("Diplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Panic button 的本地化字符串。
+        /// </summary>
+        public static string ESCKeyFuncion_B {
+            get {
+                return ResourceManager.GetString("ESCKeyFuncion_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ESC key function 的本地化字符串。
+        /// </summary>
+        public static string ESCKeyFunction {
+            get {
+                return ResourceManager.GetString("ESCKeyFunction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Right click 的本地化字符串。
+        /// </summary>
+        public static string ESCKeyFunction_A {
+            get {
+                return ResourceManager.GetString("ESCKeyFunction_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Game speed 的本地化字符串。
+        /// </summary>
+        public static string GameSpeed {
+            get {
+                return ResourceManager.GetString("GameSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 General1 的本地化字符串。
+        /// </summary>
+        public static string General1 {
+            get {
+                return ResourceManager.GetString("General1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 General2 的本地化字符串。
+        /// </summary>
+        public static string General2 {
+            get {
+                return ResourceManager.GetString("General2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hide mouse cursor 的本地化字符串。
+        /// </summary>
+        public static string HideMouseCursor {
+            get {
+                return ResourceManager.GetString("HideMouseCursor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Never 的本地化字符串。
+        /// </summary>
+        public static string HideMouseCursor_A {
+            get {
+                return ResourceManager.GetString("HideMouseCursor_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 5s 的本地化字符串。
+        /// </summary>
+        public static string HideMouseCursor_B {
+            get {
+                return ResourceManager.GetString("HideMouseCursor_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 10s 的本地化字符串。
+        /// </summary>
+        public static string HideMouseCursor_C {
+            get {
+                return ResourceManager.GetString("HideMouseCursor_C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 15s 的本地化字符串。
+        /// </summary>
+        public static string HideMouseCursor_D {
+            get {
+                return ResourceManager.GetString("HideMouseCursor_D", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 English 的本地化字符串。
         /// </summary>
         public static string Language {
             get {
@@ -79,11 +403,65 @@ namespace Language {
         }
         
         /// <summary>
-        ///   查找类似 New Game 的本地化字符串。
+        ///   查找类似 Master volumn 的本地化字符串。
+        /// </summary>
+        public static string MasterVolumn {
+            get {
+                return ResourceManager.GetString("MasterVolumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 New game 的本地化字符串。
         /// </summary>
         public static string NewGame {
             get {
                 return ResourceManager.GetString("NewGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Panic button 的本地化字符串。
+        /// </summary>
+        public static string PanicButton {
+            get {
+                return ResourceManager.GetString("PanicButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Minimize 的本地化字符串。
+        /// </summary>
+        public static string PanicButton_A {
+            get {
+                return ResourceManager.GetString("PanicButton_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Image 1 的本地化字符串。
+        /// </summary>
+        public static string PanicButton_B {
+            get {
+                return ResourceManager.GetString("PanicButton_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Image 2 的本地化字符串。
+        /// </summary>
+        public static string PanicButton_C {
+            get {
+                return ResourceManager.GetString("PanicButton_C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Custom image 的本地化字符串。
+        /// </summary>
+        public static string PanicButton_D {
+            get {
+                return ResourceManager.GetString("PanicButton_D", resourceCulture);
             }
         }
         
@@ -97,11 +475,299 @@ namespace Language {
         }
         
         /// <summary>
+        ///   查找类似 Resetting to default settings 的本地化字符串。
+        /// </summary>
+        public static string ResettingToDefaultSettings {
+            get {
+                return ResourceManager.GetString("ResettingToDefaultSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Return 的本地化字符串。
+        /// </summary>
+        public static string Return {
+            get {
+                return ResourceManager.GetString("Return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Returning to title 的本地化字符串。
+        /// </summary>
+        public static string ReturningToTitle {
+            get {
+                return ResourceManager.GetString("ReturningToTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Skip mode after choice 的本地化字符串。
+        /// </summary>
+        public static string SkipModeAfterChoice {
+            get {
+                return ResourceManager.GetString("SkipModeAfterChoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Continue 的本地化字符串。
+        /// </summary>
+        public static string SkipModeAfterChoice_A {
+            get {
+                return ResourceManager.GetString("SkipModeAfterChoice_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stop 的本地化字符串。
+        /// </summary>
+        public static string SkipModeAfterChoice_B {
+            get {
+                return ResourceManager.GetString("SkipModeAfterChoice_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Skip speed 的本地化字符串。
+        /// </summary>
+        public static string SkipSpeed {
+            get {
+                return ResourceManager.GetString("SkipSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Skip unread text 的本地化字符串。
+        /// </summary>
+        public static string SkipUnreadText {
+            get {
+                return ResourceManager.GetString("SkipUnreadText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Everything 的本地化字符串。
+        /// </summary>
+        public static string SkipUnreadText_A {
+            get {
+                return ResourceManager.GetString("SkipUnreadText_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Only read 的本地化字符串。
+        /// </summary>
+        public static string SkipUnreadText_B {
+            get {
+                return ResourceManager.GetString("SkipUnreadText_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sound 的本地化字符串。
+        /// </summary>
+        public static string Sound {
+            get {
+                return ResourceManager.GetString("Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sound effects 的本地化字符串。
+        /// </summary>
+        public static string SoundEffects {
+            get {
+                return ResourceManager.GetString("SoundEffects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 System 的本地化字符串。
         /// </summary>
         public static string System {
             get {
                 return ResourceManager.GetString("System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Text 的本地化字符串。
+        /// </summary>
+        public static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Text box opacity 的本地化字符串。
+        /// </summary>
+        public static string TextBoxOpacity {
+            get {
+                return ResourceManager.GetString("TextBoxOpacity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Text settings 的本地化字符串。
+        /// </summary>
+        public static string TextSettings {
+            get {
+                return ResourceManager.GetString("TextSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Text box 的本地化字符串。
+        /// </summary>
+        public static string TextSettings_A {
+            get {
+                return ResourceManager.GetString("TextSettings_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Other POV 的本地化字符串。
+        /// </summary>
+        public static string TextSettings_B {
+            get {
+                return ResourceManager.GetString("TextSettings_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unread text 的本地化字符串。
+        /// </summary>
+        public static string TextSettings_C {
+            get {
+                return ResourceManager.GetString("TextSettings_C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Read text 的本地化字符串。
+        /// </summary>
+        public static string TextSettings_D {
+            get {
+                return ResourceManager.GetString("TextSettings_D", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Text speed 的本地化字符串。
+        /// </summary>
+        public static string TextSpeed {
+            get {
+                return ResourceManager.GetString("TextSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Title screen 的本地化字符串。
+        /// </summary>
+        public static string TitleScreen {
+            get {
+                return ResourceManager.GetString("TitleScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 UI display 的本地化字符串。
+        /// </summary>
+        public static string UIDisplay {
+            get {
+                return ResourceManager.GetString("UIDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Progress icon 的本地化字符串。
+        /// </summary>
+        public static string UIDisplay_A {
+            get {
+                return ResourceManager.GetString("UIDisplay_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Progress meter 的本地化字符串。
+        /// </summary>
+        public static string UIDisplay_B {
+            get {
+                return ResourceManager.GetString("UIDisplay_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Window menu 的本地化字符串。
+        /// </summary>
+        public static string UIDisplay_C {
+            get {
+                return ResourceManager.GetString("UIDisplay_C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Touch UI 的本地化字符串。
+        /// </summary>
+        public static string UIDisplay_D {
+            get {
+                return ResourceManager.GetString("UIDisplay_D", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Visual effects 的本地化字符串。
+        /// </summary>
+        public static string VisualEffects {
+            get {
+                return ResourceManager.GetString("VisualEffects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Voice 的本地化字符串。
+        /// </summary>
+        public static string Voice {
+            get {
+                return ResourceManager.GetString("Voice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Window size 的本地化字符串。
+        /// </summary>
+        public static string WindowSize {
+            get {
+                return ResourceManager.GetString("WindowSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Windowed 的本地化字符串。
+        /// </summary>
+        public static string WindowSize_A {
+            get {
+                return ResourceManager.GetString("WindowSize_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Fullscreen 的本地化字符串。
+        /// </summary>
+        public static string WindowSize_B {
+            get {
+                return ResourceManager.GetString("WindowSize_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Window Type 的本地化字符串。
+        /// </summary>
+        public static string WindowType {
+            get {
+                return ResourceManager.GetString("WindowType", resourceCulture);
             }
         }
     }

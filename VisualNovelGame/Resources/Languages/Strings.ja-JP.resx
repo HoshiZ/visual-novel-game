@@ -117,19 +117,250 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>ゲーム画面を常に手前に表示</value>
+  </data>
+  <data name="Animation" xml:space="preserve">
+    <value>アニメーション効果</value>
+  </data>
+  <data name="AutoModeAfterChoice" xml:space="preserve">
+    <value>選択肢後オート</value>
+  </data>
+  <data name="AutoModeAfterChoice_A" xml:space="preserve">
+    <value>継続</value>
+  </data>
+  <data name="AutoModeAfterChoice_B" xml:space="preserve">
+    <value>解除</value>
+  </data>
+  <data name="AutoModeSpeed" xml:space="preserve">
+    <value>オート速度</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>簡易設定</value>
+  </data>
+  <data name="BGM" xml:space="preserve">
+    <value>ＢＧＭ</value>
+  </data>
+  <data name="BGMDuringVoicePlayback" xml:space="preserve">
+    <value>ＢＧＭ（ボイス再生時）</value>
+  </data>
+  <data name="Button_OFF" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="Button_ON" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="ChapterDisplay" xml:space="preserve">
+    <value>チャプター表示</value>
+  </data>
+  <data name="CharacterVolumns" xml:space="preserve">
+    <value>音声の個別設定</value>
+  </data>
+  <data name="CharacterVolumns_Elaina" xml:space="preserve">
+    <value>イレイナ</value>
+  </data>
+  <data name="CharacterVolumns_Litangdingzhen" xml:space="preserve">
+    <value>デイチン</value>
+  </data>
+  <data name="CharacterVolumns_RinHoshizora" xml:space="preserve">
+    <value>凛</value>
+  </data>
+  <data name="CharacterVolumns_Tsubasakido" xml:space="preserve">
+    <value>翼</value>
+  </data>
+  <data name="ClosingTheGame" xml:space="preserve">
+    <value>ゲーム終了実行確認</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>カラー設定</value>
+  </data>
+  <data name="CtrlSkip" xml:space="preserve">
+    <value>未読スキップ</value>
+  </data>
+  <data name="CtrlSkip_A" xml:space="preserve">
+    <value>既読のみ</value>
+  </data>
+  <data name="CtrlSkip_B" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="Defaults" xml:space="preserve">
+    <value>初期設定に戻す</value>
+  </data>
+  <data name="Dialog" xml:space="preserve">
+    <value>ダイアログ</value>
+  </data>
+  <data name="Diplay" xml:space="preserve">
+    <value>画像表示</value>
+  </data>
+  <data name="ESCKeyFuncion_B" xml:space="preserve">
+    <value>スクランブル機能</value>
+  </data>
+  <data name="ESCKeyFunction" xml:space="preserve">
+    <value>E S C 機能</value>
+  </data>
+  <data name="ESCKeyFunction_A" xml:space="preserve">
+    <value>右クリック</value>
+  </data>
+  <data name="GameSpeed" xml:space="preserve">
+    <value>ゲーム再生速度</value>
+  </data>
+  <data name="General1" xml:space="preserve">
+    <value>ゲーム進行1</value>
+  </data>
+  <data name="General2" xml:space="preserve">
+    <value>ゲーム進行2</value>
+  </data>
+  <data name="HideMouseCursor" xml:space="preserve">
+    <value>マウスカーソル自動消去</value>
+  </data>
+  <data name="HideMouseCursor_A" xml:space="preserve">
+    <value>しない</value>
+  </data>
+  <data name="HideMouseCursor_B" xml:space="preserve">
+    <value>5秒</value>
+  </data>
+  <data name="HideMouseCursor_C" xml:space="preserve">
+    <value>10秒</value>
+  </data>
+  <data name="HideMouseCursor_D" xml:space="preserve">
+    <value>15秒</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Japanese</value>
   </data>
   <data name="Load" xml:space="preserve">
     <value>つづきから</value>
   </data>
+  <data name="MasterVolumn" xml:space="preserve">
+    <value>マスターボリューム</value>
+  </data>
   <data name="NewGame" xml:space="preserve">
     <value>はじめから</value>
+  </data>
+  <data name="PanicButton" xml:space="preserve">
+    <value>Panic button</value>
+  </data>
+  <data name="PanicButton_A" xml:space="preserve">
+    <value>最小化</value>
+  </data>
+  <data name="PanicButton_B" xml:space="preserve">
+    <value>画像1</value>
+  </data>
+  <data name="PanicButton_C" xml:space="preserve">
+    <value>画像2</value>
+  </data>
+  <data name="PanicButton_D" xml:space="preserve">
+    <value>ユーザー指定</value>
   </data>
   <data name="Quit" xml:space="preserve">
     <value>ゲームの終了</value>
   </data>
+  <data name="ResettingToDefaultSettings" xml:space="preserve">
+    <value>システム初期化実行確認</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>ゲーム画面に戻る</value>
+  </data>
+  <data name="ReturningToTitle" xml:space="preserve">
+    <value>タイトルに戻る･ボイス回想中断確認</value>
+  </data>
+  <data name="SkipModeAfterChoice" xml:space="preserve">
+    <value>Skip mode after choice</value>
+  </data>
+  <data name="SkipModeAfterChoice_A" xml:space="preserve">
+    <value>継続</value>
+  </data>
+  <data name="SkipModeAfterChoice_B" xml:space="preserve">
+    <value>解除</value>
+  </data>
+  <data name="SkipSpeed" xml:space="preserve">
+    <value>スキップ速度調整</value>
+  </data>
+  <data name="SkipUnreadText" xml:space="preserve">
+    <value>未読スキップ</value>
+  </data>
+  <data name="SkipUnreadText_A" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="SkipUnreadText_B" xml:space="preserve">
+    <value>既読のみ</value>
+  </data>
+  <data name="Sound" xml:space="preserve">
+    <value>サウンド</value>
+  </data>
+  <data name="SoundEffects" xml:space="preserve">
+    <value>ＳE</value>
+  </data>
+  <data name="Sound_Voice" xml:space="preserve">
+    <value>ボイス（ゲーム中）</value>
+  </data>
+  <data name="Sub_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
   <data name="System" xml:space="preserve">
-    <value>システム設定</value>
+    <value>システム</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>テキスト速度</value>
+  </data>
+  <data name="TextBoxOpacity" xml:space="preserve">
+    <value>ウインドウ透明度</value>
+  </data>
+  <data name="TextSettings" xml:space="preserve">
+    <value>ウインドウ･文字設定</value>
+  </data>
+  <data name="TextSettings_A" xml:space="preserve">
+    <value>通常時ウインドウ</value>
+  </data>
+  <data name="TextSettings_B" xml:space="preserve">
+    <value>視点変更時ウインドウ</value>
+  </data>
+  <data name="TextSettings_C" xml:space="preserve">
+    <value>未読文字</value>
+  </data>
+  <data name="TextSettings_D" xml:space="preserve">
+    <value>既読文字</value>
+  </data>
+  <data name="TextSpeed" xml:space="preserve">
+    <value>テキスト速度</value>
+  </data>
+  <data name="Text_Skip" xml:space="preserve">
+    <value>Ｃｔｒｌスキップ</value>
+  </data>
+  <data name="TitleScreen" xml:space="preserve">
+    <value>タイトル画面に戻る</value>
+  </data>
+  <data name="UIDisplay" xml:space="preserve">
+    <value>画面アイテムの表示</value>
+  </data>
+  <data name="UIDisplay_A" xml:space="preserve">
+    <value>通行状態アイコン</value>
+  </data>
+  <data name="UIDisplay_B" xml:space="preserve">
+    <value>通行メーター</value>
+  </data>
+  <data name="UIDisplay_C" xml:space="preserve">
+    <value>ウインドウメニュー</value>
+  </data>
+  <data name="UIDisplay_D" xml:space="preserve">
+    <value>タッチUI</value>
+  </data>
+  <data name="VisualEffects" xml:space="preserve">
+    <value>画面効果</value>
+  </data>
+  <data name="Voice" xml:space="preserve">
+    <value>ボイス</value>
+  </data>
+  <data name="WindowSize" xml:space="preserve">
+    <value>画面サイズ</value>
+  </data>
+  <data name="WindowSize_A" xml:space="preserve">
+    <value>ウインドウ</value>
+  </data>
+  <data name="WindowSize_B" xml:space="preserve">
+    <value>フルスクリーン</value>
+  </data>
+  <data name="WindowType" xml:space="preserve">
+    <value>画面サイズ</value>
   </data>
 </root>

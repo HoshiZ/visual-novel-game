@@ -58,8 +58,8 @@ namespace VisualNovelGame.ViewModels
                 var parameters = new NavigationParameters();
                 parameters.Add("ReturnRegion", "IndexViewRegion");
                 parameters.Add("ReturnView", "IndexControl");
-                //_regionManager.RequestNavigate("IndexViewRegion", "SystemSettingsView", parameters);
-                
+                _regionManager.RequestNavigate("IndexViewRegion", "SystemSettingsView", parameters);
+
             }
             else if (page == "Quit")
             {

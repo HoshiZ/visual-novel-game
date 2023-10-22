@@ -25,24 +25,10 @@ namespace VisualNovelGame.Controls
     /// </summary>
     public partial class IndexControl : UserControl
     {
-        public readonly IEventAggregator _eventAggregator;
-
-        public IndexControl(IEventAggregator eventAggregator, IndexControlViewModel indexControlViewModel)
+        public IndexControl(IndexControlViewModel indexControlViewModel)
         {
             InitializeComponent();
             DataContext = indexControlViewModel;
-            //_eventAggregator = eventAggregator;
         }
-
-        //private void TogoSystem(string Page)
-        //{
-        //    _eventAggregator.GetEvent<IndexTogoEvent>().Publish("System");
-        //}
-
-        //private void TogoGame(string Page)
-        //{
-        //    _eventAggregator.GetEvent<>
-        //}
-
     }
 }
