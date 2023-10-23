@@ -33,21 +33,23 @@
                     </Grid.RowDefinitions>
 
                     <ContentControl Grid.Row="0" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding WindowTypeButtons}" />
-                    <ContentControl Grid.Row="1" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AspectRatioButtons}"/>
-                    <ContentControl Grid.Row="2" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding VisualEffectsButtons}"/>
-                    <ContentControl Grid.Row="3" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AnimationButtons}"/>
-                    <ContentControl Grid.Row="4" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding ESCKeyFunctionButtons}"/>
-                    <ContentControl Grid.Row="5" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding PanicButtonButtons}"/>
+                    <ContentControl Grid.Row="1" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding VisualEffectsButtons}"/>
+                    <ContentControl Grid.Row="2" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AnimationButtons}"/>
+                    <ContentControl Grid.Row="3" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding ESCKeyFunctionButtons}"/>
+                    <ContentControl Grid.Row="4" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding PanicButtonButtons}"/>
                     
                     <ContentControl Grid.Row="0" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AlwaysOnTopButtons}"/>
                     <ContentControl Grid.Row="1" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForToggleButton}" Content="{Binding UIDisplayButton}"/>
                     <ContentControl Grid.Row="2" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding ChapterDisplaySliderDisplayWithButton}"/>
+
+                </Grid>
+
+                <!--
+                    <ContentControl Grid.Row="1" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AspectRatioButtons}"/>
                     <ContentControl Grid.Row="3" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding MusicTitleDisplaySliderDisplayWithButton}"/>
                     <ContentControl Grid.Row="4" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding CharacterPortraitsButtons}"/>
                     <ContentControl Grid.Row="5" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding ShowPopUpWindowButtons}"/>
-                </Grid>
-
-                
+                -->
             </Grid>
         </DataTemplate>
     </UserControl.Resources>

@@ -1,4 +1,5 @@
 ﻿    using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -7,49 +8,60 @@ using System.Configuration;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media.Converters;
+using VisualNovelGame.Events;
+using VisualNovelGame.Services.Interfaces;
 using VisualNovelGame.ViewModels.SystemControlViewModel.ItemViewModels;
 
 namespace VisualNovelGame.ViewModels.SystemControlViewModel
 {
     public class BasicViewModel : BindableBase
     {
-        // 构造函数
-        public BasicViewModel()
-        {
+        private readonly IUIStringsService _UIStringsService;
 
-            TextSpeedSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "文字速度" };
+
+        // 构造函数
+        public BasicViewModel(IUIStringsService uIStringsService, IEventAggregator eventAggregator)
+        {
+            _UIStringsService = uIStringsService;
+            eventAggregator.GetEvent<LanguageChangedEvent>().Subscribe(UpdateStrings);
+
+            InitialPageItem();
+        }
+
+        private void InitialPageItem()
+        {
+            TextSpeedSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = TextSpeed };
             TextSpeedSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = TextSpeedSliderCommand, ButtonCommand = null });
 
-            AutoModeSpeedSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "自动模式速度" };
+            AutoModeSpeedSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = AutoModeSpeed };
             AutoModeSpeedSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = AutoModeSpeedSliderCommand, ButtonCommand = null });
 
-            MasterVolumeSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "主音量" };
+            MasterVolumeSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = MasterVolumn };
             MasterVolumeSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = MasterVolumnSliderCommand, ButtonCommand = MasterVolumnButtonCommand });
 
-            BGMSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "BGM" };
+            BGMSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = BGM };
             BGMSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = BGMSliderCommand, ButtonCommand = BGMButtonCommand });
 
-            SoundEffectsSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "音效" };
+            SoundEffectsSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = SoundEffects };
             SoundEffectsSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = SoundEffectsSliderCommand, ButtonCommand = SoundEffectsButtonCommand });
 
-            VoiceSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "语音" };
+            VoiceSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = Voice };
             VoiceSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = VoiceSliderCommand, ButtonCommand = VoiceButtonCommand });
 
-            MovieSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "动画" };
-            MovieSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = MovieSliderCommand, ButtonCommand = MovieButtonCommand });
+            //MovieSliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "动画" };
+            //MovieSliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = MovieSliderCommand, ButtonCommand = MovieButtonCommand });
 
-            WindowSizeRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "显示模式设置" };
-            WindowSizeRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = WindowSizeCommand, CommandParameter = "ON", GroupName = "WindowSize", IsChecked = false });
-            WindowSizeRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = WindowSizeCommand, CommandParameter = "OFF", GroupName = "WindowSize", IsChecked = false });
+            WindowSizeRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = WindowSize };
+            WindowSizeRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = WindowSize_A, DelegateCommand = WindowSizeCommand, CommandParameter = "Windowed", GroupName = "WindowSize", IsChecked = false });
+            WindowSizeRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = WindowSize_B, DelegateCommand = WindowSizeCommand, CommandParameter = "Fullscreen", GroupName = "WindowSize", IsChecked = false });
 
-            AspectRatioRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "画面比例" };
-            AspectRatioRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = AspectRatioCommand, CommandParameter = "ON", GroupName = "AspectRatio", IsChecked = false });
-            AspectRatioRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = AspectRatioCommand, CommandParameter = "OFF", GroupName = "AspectRatio", IsChecked = false });
+            //AspectRatioRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "画面比例" };
+            //AspectRatioRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = AspectRatioCommand, CommandParameter = "ON", GroupName = "AspectRatio", IsChecked = false });
+            //AspectRatioRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = AspectRatioCommand, CommandParameter = "OFF", GroupName = "AspectRatio", IsChecked = false });
 
-            CtrlSkipRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "跳过未读画面" };
-            CtrlSkipRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = CtrlSkipCommand, CommandParameter = "ON", GroupName = "CtrlSkip", IsChecked = false });
-            CtrlSkipRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = CtrlSkipCommand, CommandParameter = "OFF", GroupName = "CtrlSkip", IsChecked = false });
-
+            CtrlSkipRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = CtrlSkip };
+            CtrlSkipRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = CtrlSkip_A, DelegateCommand = CtrlSkipCommand, CommandParameter = "OnlyRead", GroupName = "CtrlSkip", IsChecked = false });
+            CtrlSkipRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = CtrlSkip_B, DelegateCommand = CtrlSkipCommand, CommandParameter = "Everything", GroupName = "CtrlSkip", IsChecked = false });
         }
 
         // 测试
@@ -263,6 +275,33 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
             }
         }
 
+        public string WindowSize => _UIStringsService.WindowSize;
+        public string TextSpeed => _UIStringsService.TextSpeed;
+        public string AutoModeSpeed => _UIStringsService.AutoModeSpeed;
+        public string CtrlSkip => _UIStringsService.CtrlSkip;
+        public string MasterVolumn => _UIStringsService.MasterVolumn;
+        public string BGM => _UIStringsService.BGM;
+        public string SoundEffects => _UIStringsService.SoundEffects;
+        public string Voice => _UIStringsService.Voice;
+        public string WindowSize_A => _UIStringsService.WindowSize_A;
+        public string WindowSize_B => _UIStringsService.WindowSize_B;
+        public string CtrlSkip_A => _UIStringsService.CtrlSkip_A;
+        public string CtrlSkip_B => _UIStringsService.CtrlSkip_B;
 
+        public void UpdateStrings()
+        {
+            RaisePropertyChanged(nameof(WindowSize));
+            RaisePropertyChanged(nameof(TextSpeed));
+            RaisePropertyChanged(nameof(AutoModeSpeed));
+            RaisePropertyChanged(nameof(CtrlSkip));
+            RaisePropertyChanged(nameof(MasterVolumn));
+            RaisePropertyChanged(nameof(BGM));
+            RaisePropertyChanged(nameof(SoundEffects));
+            RaisePropertyChanged(nameof(Voice));
+            RaisePropertyChanged(nameof(WindowSize_A));
+            RaisePropertyChanged(nameof(WindowSize_B));
+            RaisePropertyChanged(nameof(CtrlSkip_A));
+            RaisePropertyChanged(nameof(CtrlSkip_B));
+        }
     }
 }

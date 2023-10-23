@@ -18,27 +18,8 @@ namespace fake
         {
             var visualNovelGameDBContext = new VisualNovelGameDBContext();
             var initialMethod = new InitialMethod(visualNovelGameDBContext);
-            
 
             initialMethod.AllInitial();
-
-
-
-            //var ceshi = new VNGRepository();
-            //var ceshi2 = ceshi.GetMainlineDialogues();
-            //var ceshi3 = ceshi.GetCharacterImagePathFromDialog(ceshi2);
-
-            //var ceshi = new VNCService();
-            //for (int i = 0; ; i++)
-            //{
-            //    var data = ceshi.GetGameDataModel();
-            //    if (data == null)
-            //    {
-            //        break;
-            //    }
-            //    Console.WriteLine(data.Text);
-            //    Console.WriteLine(data.Chapter);
-            //}
         }
 
         public class InitialMethod

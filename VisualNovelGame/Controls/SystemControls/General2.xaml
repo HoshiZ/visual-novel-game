@@ -32,11 +32,15 @@
                     </Grid.ColumnDefinitions>
 
                     <ContentControl Grid.Column="1" Grid.Row="0" ContentTemplate="{StaticResource ItemTemplateForSliderDisplay}" Content="{Binding GameSpeedItem}"/>
+                    <ContentControl Grid.Column="1" Grid.Row="1" ContentTemplate="{StaticResource ItemTemplateForSliderDisplay}" Content="{Binding SkipSpeedItem}"/>
+
+                    
+                    <!--
                     <ContentControl Grid.Column="1" Grid.Row="1" ContentTemplate="{StaticResource ItemTemplateForSliderDisplay}" Content="{Binding VoicePlaybackItem}"/>
-                    <ContentControl Grid.Column="1" Grid.Row="2" ContentTemplate="{StaticResource ItemTemplateForSliderDisplay}" Content="{Binding SkipSpeedItem}"/>
                     <ContentControl Grid.Column="1" Grid.Row="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding SkipStyleItem}"/>
                     <ContentControl Grid.Column="1" Grid.Row="4" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding RightClickSkipsMoviesItem}"/>
                     <ContentControl Grid.Column="1" Grid.Row="5" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding SkipMoviesDuringSkipModeItem}"/>
+                    -->
                     <Grid Grid.Row="0" Grid.Column="3" Grid.RowSpan="4">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="45*" />
@@ -47,7 +51,9 @@
                             <RowDefinition Height="25*" />
                         </Grid.RowDefinitions>
 
+                        <!--
                         <TextBlock Grid.Row="0">Dramatic mode</TextBlock>
+                        -->
 
                         <Grid Grid.Row="1" Grid.RowSpan="3">
                             <Grid.RowDefinitions>
@@ -60,18 +66,24 @@
                                 <ColumnDefinition Width="630*" />
                             </Grid.ColumnDefinitions>
 
+                            <!--
                             <ContentControl Grid.Column="1" Grid.Row="0" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding VoicedLinesItem}"/>
                             <ContentControl Grid.Column="1" Grid.Row="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding ProtagonistsLinesItem}"/>
                             <ContentControl Grid.Column="1" Grid.Row="2" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding OtherLinesItem}"/>
+                            -->
 
                         </Grid>
 
                         <StackPanel Grid.Row="4" HorizontalAlignment="Right" Orientation="Horizontal">
+                            <!--
                             <ToggleButton>测试按钮</ToggleButton>
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">按照原来的电影模式来设置</TextBlock>
+                            -->
                         </StackPanel>
                     </Grid>
+                    <!--
                     <ContentControl Grid.Column="3" Grid.Row="5" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding ScreenshotSettingsItem}"/>
+                    -->
                 </Grid>
             </Grid>
         </DataTemplate>

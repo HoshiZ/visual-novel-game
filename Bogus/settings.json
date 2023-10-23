@@ -1,12 +1,12 @@
 {
-  "isInitialAudio": false,
-  "isInitialBGM": false,
-  "isInitialCharacter": false,
-  "isInitialCharacterImage": false,
-  "isInitialChoiceOption": false,
-  "isInitialMainlineDialogue": false,
-  "isInitialMainlineDialogue_CharacterImage": false,
-  "isInitialMainlineText": false,
-  "isInitialOptionCollection": false,
-  "isInitialScene": false
+  "isInitialAudio": true,
+  "isInitialBGM": true,
+  "isInitialCharacter": true,
+  "isInitialCharacterImage": true,
+  "isInitialChoiceOption": true,
+  "isInitialMainlineDialogue": true,
+  "isInitialMainlineDialogue_CharacterImage": true,
+  "isInitialMainlineText": true,
+  "isInitialOptionCollection": true,
+  "isInitialScene": true
 }

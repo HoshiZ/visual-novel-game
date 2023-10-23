@@ -279,9 +279,9 @@ namespace Language {
         /// <summary>
         ///   查找类似 Display 的本地化字符串。
         /// </summary>
-        public static string Diplay {
+        public static string Display {
             get {
-                return ResourceManager.GetString("Diplay", resourceCulture);
+                return ResourceManager.GetString("Display", resourceCulture);
             }
         }
         

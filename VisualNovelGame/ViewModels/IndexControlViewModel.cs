@@ -1,10 +1,13 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Globalization;
 using System.Windows;
+using VisualNovelGame.Events;
 using VisualNovelGame.Resources.Languages;
+using VisualNovelGame.Services.Interfaces;
 
 namespace VisualNovelGame.ViewModels
 {
@@ -12,28 +15,34 @@ namespace VisualNovelGame.ViewModels
     {
         // 服务
         private readonly IRegionManager _regionManager;
-        private LanguageState languageSettingState = (LanguageState)Properties.Settings.Default.CurrentLanguage;
+        private readonly IUIStringsService _UIStringsService;
+
+        //private LanguageState languageSettingState = (LanguageState)Properties.Settings.Default.CurrentLanguage;
 
         private DelegateCommand<string> _indexTogoCommand;
         public DelegateCommand<string> IndexTogoCommand =>
             _indexTogoCommand ?? (_indexTogoCommand = new DelegateCommand<string>(ExecuteIndexTogoCommand));
 
         // 构造函数
-        public IndexControlViewModel(IRegionManager regionManager)
+        public IndexControlViewModel(IRegionManager regionManager, IUIStringsService uIStringsService, IEventAggregator eventAggregator)
         {
             _regionManager = regionManager;
-            SwitchLanguageCommand = new DelegateCommand(switchLanguage);
-
-            InitialPageLanguage();
+            _UIStringsService = uIStringsService;
+            //SwitchLanguageCommand = new DelegateCommand(switchLanguage);
+            //languageSettingState.ToCode();
+            //InitialPageLanguage();
+            _UIStringsService.UpdateUI();
+            eventAggregator.GetEvent<LanguageChangedEvent>().Subscribe(UpdateStrings);
+            //UpdateStrings2();
         }
 
-        public void InitialPageLanguage()
-        {
-            string code = languageSettingState.ToCode();
-            Language.Strings.Culture = new CultureInfo(code);
-            CurrentLanguage = languageSettingState;
-            UpdateStrings();
-        }
+        //public void InitialPageLanguage()
+        //{
+        //    string code = languageSettingState.ToCode();
+        //    Language.Strings.Culture = new CultureInfo(code);
+        //    CurrentLanguage = languageSettingState;
+        //    _UIStringsService.UpdateStrings();
+        //}
 
         // 首页按钮点击事件
         private void ExecuteIndexTogoCommand(string page)
@@ -67,36 +76,15 @@ namespace VisualNovelGame.ViewModels
             }
             else if (page == "Language")
             {
-                CurrentLanguage = (LanguageState)(((int)CurrentLanguage + 1) % Enum.GetNames(typeof(LanguageState)).Length);
-                UpdateStrings();
+                _UIStringsService.ChangeUIStrings();
             }
         }
 
-
-        // 首页ToggleButton三状态
-        public enum LanguageState
-        {
-            Chinese,
-            English,
-            Japanese
-        };
-        
-        public LanguageState CurrentLanguage
-        {
-            get { return languageSettingState; }
-            set
-            {
-                if (languageSettingState != value)
-                {
-                    SetProperty(ref languageSettingState, value);
-                    Properties.Settings.Default.CurrentLanguage = (int)CurrentLanguage;
-                    Properties.Settings.Default.Save();
-                    string code = CurrentLanguage.ToCode();
-                    UpdateStrings();
-                    Language.Strings.Culture = new CultureInfo(code);
-                }
-            }
-        }
+        public string NewGame => _UIStringsService.NewGame;
+        public string LanguageChange => _UIStringsService.LanguageChange;
+        public string Load => _UIStringsService.Load;
+        public string System => _UIStringsService.System;
+        public string Quit => _UIStringsService.Quit;
 
         public void UpdateStrings()
         {
@@ -107,16 +95,10 @@ namespace VisualNovelGame.ViewModels
             RaisePropertyChanged(nameof(Quit));
         }
 
-        public string NewGame => Language.Strings.NewGame;
-        public string LanguageChange => Language.Strings.Language;
-        public string Load => Language.Strings.Load;
-        public string System => Language.Strings.System;
-        public string Quit => Language.Strings.Quit;
-
         public DelegateCommand SwitchLanguageCommand { get; }
-        private void switchLanguage()
-        {
-            CurrentLanguage = (LanguageState)(((int)CurrentLanguage + 1) % Enum.GetNames(typeof(LanguageState)).Length);
-        }
+        //private void switchLanguage()
+        //{
+        //    CurrentLanguage = (LanguageState)(((int)CurrentLanguage + 1) % Enum.GetNames(typeof(LanguageState)).Length);
+        //}
     }
 }

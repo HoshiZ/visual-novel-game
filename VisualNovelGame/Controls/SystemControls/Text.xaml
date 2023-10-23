@@ -80,6 +80,6 @@
     </UserControl.Resources>
 
     <Grid>
-        
+        <ContentControl ContentTemplate="{DynamicResource ItemContainer}" Content="{Binding}"/>
     </Grid>
 </UserControl>

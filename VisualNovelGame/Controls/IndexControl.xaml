@@ -46,9 +46,5 @@
             <Button Content="{Binding Quit}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Quit"/>
             <Button Content="{Binding LanguageChange}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Language"/>
         </StackPanel>
-
-        <Popup x:Name="CenteredPopup" AllowsTransparency="True" IsOpen="True">
-            <local:ClosegamePopupControl Width="300" Height="200" />
-        </Popup>
     </Grid>
 </UserControl>

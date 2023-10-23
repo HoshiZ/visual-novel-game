@@ -32,7 +32,6 @@
 
 
                     <ContentControl Grid.Column="1" Grid.Row="0" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding WindowSizeRadioButtons}"/>
-                    <ContentControl Grid.Column="1" Grid.Row="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AspectRatioRadioButtons}"/>
                     <ContentControl Grid.Column="1" Grid.Row="2" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding TextSpeedSliderDisplayWithButton}"/>
                     <ContentControl Grid.Column="1" Grid.Row="3" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding AutoModeSpeedSliderDisplayWithButton}"/>
                     <ContentControl Grid.Column="1" Grid.Row="4" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding CtrlSkipRadioButtons}"/>
@@ -41,7 +40,12 @@
                     <ContentControl Grid.Column="3" Grid.Row="1" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding BGMSliderDisplayWithButton}"/>
                     <ContentControl Grid.Column="3" Grid.Row="2" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding SoundEffectsSliderDisplayWithButton}"/>
                     <ContentControl Grid.Column="3" Grid.Row="3" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding VoiceSliderDisplayWithButton}"/>
+
+                    <!--
+                    <ContentControl Grid.Column="1" Grid.Row="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AspectRatioRadioButtons}"/>
                     <ContentControl Grid.Column="3" Grid.Row="4" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding MovieSliderDisplayWithButton}"/>
+                    
+                    -->
                 </Grid>
             </Grid>
         </DataTemplate>

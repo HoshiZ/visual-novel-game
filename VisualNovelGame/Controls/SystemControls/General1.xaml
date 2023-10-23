@@ -29,16 +29,20 @@
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
+
+                    <ContentControl Grid.Row="0" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding HideMouseCursorRadioButtons}"/>
+
+                    <!--
                     <ContentControl Grid.Row="0" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AutoSkipOrjumpOverReadTextRadioButtons}"/>
                     <ContentControl Grid.Row="1" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AutoSkipOrjumpSettingRadioButtons}"/>
                     <ContentControl Grid.Row="2" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AutoCursorRadioButtons}"/>
                     <ContentControl Grid.Row="3" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AutoCursorDefaultOptionRadioButtons}"/>
-                    <ContentControl Grid.Row="4" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding HideMouseCursorRadioButtons}"/>
                     <ContentControl Grid.Row="0" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding SaveOrloadConfirmationRadioButtons}"/>
                     <ContentControl Grid.Row="1" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding ShowUnreadScenesInFlowchartRadioButtons}"/>
                     <ContentControl Grid.Row="2" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding WhenWindowIsInactiveRadioButtons}"/>
                     <ContentControl Grid.Row="3" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding TaskbarPreviewRadioButtons}"/>
                     <ContentControl Grid.Row="4" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding SuspendradioButtonsRadioButtons}"/>
+                    -->
                 </Grid>
             </Grid>
         </DataTemplate>

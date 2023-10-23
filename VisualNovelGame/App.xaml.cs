@@ -47,6 +47,8 @@ namespace VisualNovelGame
             containerRegistry.RegisterSingleton<ISystemSettingsService, SystemSettingsService>();
             containerRegistry.RegisterSingleton<IUserHabitService, UserHabitService>();
             containerRegistry.RegisterSingleton<IVNCService, VNCService>();
+            containerRegistry.RegisterSingleton<IUIStringsService, UIStringsService>();
+
 
 
             // 注册视图

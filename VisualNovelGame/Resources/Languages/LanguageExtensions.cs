@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static VisualNovelGame.ViewModels.IndexControlViewModel;
+using VisualNovelGame.Resources.Languages;
 
 namespace VisualNovelGame.Resources.Languages
 {
@@ -21,4 +21,11 @@ namespace VisualNovelGame.Resources.Languages
             return LanguageCodes.TryGetValue(languageState, out string code) ? code : "Unknown";
         }
     }
+
+    public enum LanguageState
+    {
+        Chinese,
+        English,
+        Japanese
+    };
 }
