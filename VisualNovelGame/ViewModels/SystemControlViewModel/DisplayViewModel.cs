@@ -10,57 +10,65 @@ using VisualNovelGame.Services.Interfaces;
 using VisualNovelGame.Services;
 using System.Windows;
 using VisualNovelGame.ViewModels.SystemControlViewModel.ItemViewModels;
+using VisualNovelGame.Events;
+using System.ComponentModel;
+using Prism.Mvvm;
 
 namespace VisualNovelGame.ViewModels.SystemControlViewModel
 {
-    public class DisplayViewModel
+    public class DisplayViewModel : BindableBase
     {
         // 构造函数
-        public DisplayViewModel(IEventAggregator eventAggregator, IWindowSizeService windowSizeService, ISystemSettingsService systemSettingsService)
+        public DisplayViewModel(IEventAggregator eventAggregator, IWindowSizeService windowSizeService, ISystemSettingsService systemSettingsService, IUIStringsService uIStringsService)
         {
             // 依赖注入服务
-            _eventAggregator = eventAggregator;
+            eventAggregator.GetEvent<LanguageChangedEvent>().Subscribe(UpdateStrings);
             _windowSizeService = windowSizeService;
             _systemSettingsService = systemSettingsService;
+            _UIStringsService = uIStringsService; 
 
+            InitialPageItems();
+        }
 
-            WindowTypeButtons = new ItemForRadioButtonViewModel { ItemTitle = "显示模式" };
-            WindowTypeButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "窗口", DelegateCommand = WindowTypeCommand, CommandParameter = "Windowed", GroupName = "WindowType", IsChecked = false });
-            WindowTypeButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "全屏", DelegateCommand = WindowTypeCommand, CommandParameter = "FullScreen", GroupName = "WindowType", IsChecked = false });
+        public void InitialPageItems()
+        {
+            WindowTypeButtons = new ItemForRadioButtonViewModel { ItemTitle = WindowType };
+            WindowTypeButtons.RadioButtons.Add(new RadioButtonViewModel { Content = WindowType_A, DelegateCommand = WindowTypeCommand, CommandParameter = "Windowed", GroupName = "WindowType", IsChecked = false });
+            WindowTypeButtons.RadioButtons.Add(new RadioButtonViewModel { Content = WindowType_B, DelegateCommand = WindowTypeCommand, CommandParameter = "FullScreen", GroupName = "WindowType", IsChecked = false });
 
             AspectRatioButtons = new ItemForRadioButtonViewModel { ItemTitle = "画面比例" };
             AspectRatioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "16 : 9", DelegateCommand = AspectRatioCommand, CommandParameter = "16_9", GroupName = "AspectRatio", IsChecked = false });
             AspectRatioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "4 : 3", DelegateCommand = AspectRatioCommand, CommandParameter = "4_3", GroupName = "AspectRatio", IsChecked = false });
 
-            VisualEffectsButtons = new ItemForRadioButtonViewModel { ItemTitle = "画面效果" };
-            VisualEffectsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = VisualEffectsCommand, CommandParameter = "ON", GroupName = "VisualEffects", IsChecked = false });
-            VisualEffectsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = VisualEffectsCommand, CommandParameter = "OFF", GroupName = "VisualEffects", IsChecked = false });
+            VisualEffectsButtons = new ItemForRadioButtonViewModel { ItemTitle = VisualEffects };
+            VisualEffectsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_ON, DelegateCommand = VisualEffectsCommand, CommandParameter = "ON", GroupName = "VisualEffects", IsChecked = false });
+            VisualEffectsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_OFF, DelegateCommand = VisualEffectsCommand, CommandParameter = "OFF", GroupName = "VisualEffects", IsChecked = false });
 
-            AnimationButtons = new ItemForRadioButtonViewModel { ItemTitle = "动画效果" };
-            AnimationButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = AnimationCommand, CommandParameter = "ON", GroupName = "Animation", IsChecked = false });
-            AnimationButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = AnimationCommand, CommandParameter = "OFF", GroupName = "Animation", IsChecked = false });
+            AnimationButtons = new ItemForRadioButtonViewModel { ItemTitle = Animation };
+            AnimationButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_ON, DelegateCommand = AnimationCommand, CommandParameter = "ON", GroupName = "Animation", IsChecked = false });
+            AnimationButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_OFF, DelegateCommand = AnimationCommand, CommandParameter = "OFF", GroupName = "Animation", IsChecked = false });
 
-            ESCKeyFunctionButtons = new ItemForRadioButtonViewModel { ItemTitle = "ESC键位" };
-            ESCKeyFunctionButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "右击", DelegateCommand = ESCKeyFunctionCommand, CommandParameter = "RightClick", GroupName = "ESCKeyFunction", IsChecked = false });
-            ESCKeyFunctionButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "老板键功能", DelegateCommand = ESCKeyFunctionCommand, CommandParameter = "PanicButton", GroupName = "ESCKeyFunction", IsChecked = false });
+            ESCKeyFunctionButtons = new ItemForRadioButtonViewModel { ItemTitle = ESCKeyFunction };
+            ESCKeyFunctionButtons.RadioButtons.Add(new RadioButtonViewModel { Content = ESCKeyFunction_A, DelegateCommand = ESCKeyFunctionCommand, CommandParameter = "RightClick", GroupName = "ESCKeyFunction", IsChecked = false });
+            ESCKeyFunctionButtons.RadioButtons.Add(new RadioButtonViewModel { Content = ESCKeyFunction_B, DelegateCommand = ESCKeyFunctionCommand, CommandParameter = "PanicButton", GroupName = "ESCKeyFunction", IsChecked = false });
 
-            PanicButtonButtons = new ItemForRadioButtonViewModel { ItemTitle = "老板键功能" };
-            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "最小化", DelegateCommand = PanicButtonCommand, CommandParameter = "Minimize", GroupName = "PanicButton", IsChecked = false });
-            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "图像1", DelegateCommand = PanicButtonCommand, CommandParameter = "Image1", GroupName = "PanicButton", IsChecked = false });
-            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "图像2", DelegateCommand = PanicButtonCommand, CommandParameter = "Image2", GroupName = "PanicButton", IsChecked = false });
-            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "用户指定", DelegateCommand = PanicButtonCommand, CommandParameter = "CustomImage", GroupName = "PanicButton", IsChecked = false });
+            PanicButtonButtons = new ItemForRadioButtonViewModel { ItemTitle = PanicButton };
+            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_A, DelegateCommand = PanicButtonCommand, CommandParameter = "Minimize", GroupName = "PanicButton", IsChecked = false });
+            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_B, DelegateCommand = PanicButtonCommand, CommandParameter = "Image1", GroupName = "PanicButton", IsChecked = false });
+            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_C, DelegateCommand = PanicButtonCommand, CommandParameter = "Image2", GroupName = "PanicButton", IsChecked = false });
+            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_D, DelegateCommand = PanicButtonCommand, CommandParameter = "CustomImage", GroupName = "PanicButton", IsChecked = false });
 
-            AlwaysOnTopButtons = new ItemForRadioButtonViewModel { ItemTitle = "游戏窗口始终在前" };
-            AlwaysOnTopButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = AlwaysOnTopCommand, CommandParameter = "ON", GroupName = "AlwaysOnTop", IsChecked = false });
-            AlwaysOnTopButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = AlwaysOnTopCommand, CommandParameter = "OFF", GroupName = "AlwaysOnTop", IsChecked = false });
+            AlwaysOnTopButtons = new ItemForRadioButtonViewModel { ItemTitle = AlwaysOnTop };
+            AlwaysOnTopButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_ON, DelegateCommand = AlwaysOnTopCommand, CommandParameter = "ON", GroupName = "AlwaysOnTop", IsChecked = false });
+            AlwaysOnTopButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_OFF, DelegateCommand = AlwaysOnTopCommand, CommandParameter = "OFF", GroupName = "AlwaysOnTop", IsChecked = false });
 
-            UIDisplayButton = new ItemForToggleButtonViewModel { ItemTitle = "功能区域开关" };
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = "状态图标", DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressIcon", IsChecked = false});
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = "进度条", DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressMeter", IsChecked = false});
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = "窗口菜单", DelegateCommand = UIDisplayCommand, CommandParameter = "WindowMenu", IsChecked = false});
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = "触控按钮", DelegateCommand = UIDisplayCommand, CommandParameter = "TouchUI", IsChecked = false});
+            UIDisplayButton = new ItemForToggleButtonViewModel { ItemTitle = UIDisplay };
+            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_A, DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressIcon", IsChecked = false });
+            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_B, DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressMeter", IsChecked = false });
+            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_C, DelegateCommand = UIDisplayCommand, CommandParameter = "WindowMenu", IsChecked = false });
+            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_D, DelegateCommand = UIDisplayCommand, CommandParameter = "TouchUI", IsChecked = false });
 
-            ChapterDisplaySliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "章节编号显示时间" };
+            ChapterDisplaySliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = ChapterDisplay };
             ChapterDisplaySliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = ChapterDisplayCommand, ButtonCommand = null });
 
             MusicTitleDisplaySliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "背景音乐曲名显示时间" };
@@ -76,9 +84,9 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
         }
 
         // 服务
-        private readonly IEventAggregator _eventAggregator;
         private readonly IWindowSizeService _windowSizeService;
         private readonly ISystemSettingsService _systemSettingsService;
+        private readonly IUIStringsService _UIStringsService;
 
         public ItemForRadioButtonViewModel WindowTypeButtons { get; set; }
         public ItemForRadioButtonViewModel AspectRatioButtons { get; set; }
@@ -309,5 +317,48 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
             }
         }
 
+
+        public string WindowType => _UIStringsService.WindowType;
+        public string WindowType_A => _UIStringsService.WindowSize_A;
+        public string WindowType_B => _UIStringsService.WindowSize_B;
+        public string VisualEffects => _UIStringsService.VisualEffects;
+        public string Animation => _UIStringsService.Animation;
+        public string ESCKeyFunction => _UIStringsService.ESCKeyFunction;
+        public string PanicButton => _UIStringsService.PanicButton;
+        public string AlwaysOnTop => _UIStringsService.AlwaysOnTop;
+        public string UIDisplay => _UIStringsService.UIDisplay;
+        public string ChapterDisplay => _UIStringsService.ChapterDisplay;
+        public string Button_ON => _UIStringsService.Button_ON;
+        public string Button_OFF => _UIStringsService.Button_OFF;
+        public string ESCKeyFunction_A => _UIStringsService.ESCKeyFunction_A;
+        public string ESCKeyFunction_B => _UIStringsService.ESCKeyFunction_B;
+        public string PanicButton_A => _UIStringsService.PanicButton_A;
+        public string PanicButton_B => _UIStringsService.PanicButton_B;
+        public string PanicButton_C => _UIStringsService.PanicButton_C;
+        public string PanicButton_D => _UIStringsService.PanicButton_D;
+        public string UIDisplay_A => _UIStringsService.UIDisplay_A;
+        public string UIDisplay_B => _UIStringsService.UIDisplay_B;
+        public string UIDisplay_C => _UIStringsService.UIDisplay_C;
+        public string UIDisplay_D => _UIStringsService.UIDisplay_D;
+
+        public void UpdateStrings()
+        {
+            RaisePropertyChanged(WindowType);
+            RaisePropertyChanged(VisualEffects);
+            RaisePropertyChanged(Animation);
+            RaisePropertyChanged(ESCKeyFunction);
+            RaisePropertyChanged(PanicButton_A);
+            RaisePropertyChanged(PanicButton_B);
+            RaisePropertyChanged(PanicButton_C);
+            RaisePropertyChanged(PanicButton_D);
+            RaisePropertyChanged(PanicButton);
+            RaisePropertyChanged(AlwaysOnTop);
+            RaisePropertyChanged(UIDisplay);
+            RaisePropertyChanged(ChapterDisplay);
+            RaisePropertyChanged(Button_ON);
+            RaisePropertyChanged(Button_OFF);
+            RaisePropertyChanged(ESCKeyFunction_A);
+            RaisePropertyChanged(ESCKeyFunction_B);
+        }
     }
 }

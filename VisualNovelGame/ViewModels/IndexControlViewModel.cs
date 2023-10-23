@@ -2,11 +2,7 @@
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
-using System;
-using System.Globalization;
-using System.Windows;
 using VisualNovelGame.Events;
-using VisualNovelGame.Resources.Languages;
 using VisualNovelGame.Services.Interfaces;
 
 namespace VisualNovelGame.ViewModels

@@ -59,71 +59,73 @@
                                  Command="{Binding BodyViewCommand}" 
                                  CommandParameter="Basic" 
                                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Basic}" 
-                                 Content="简易设置" />
+                                 Content="{Binding Basic}" />
                 </Grid>
                 <Grid Grid.Column="1" Width="130" Height="30">
                     <RadioButton GroupName="Settings" 
                                  Command="{Binding BodyViewCommand}" 
                                  CommandParameter="Display" 
                                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Display}" 
-                                 Content="画面显示"/>
+                                 Content="{Binding Display}"/>
                 </Grid>
                 <Grid Grid.Column="2" Width="130" Height="30">
                     <RadioButton GroupName="Settings" 
                                  Command="{Binding BodyViewCommand}" 
                                  CommandParameter="General1"
                                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=General1}" 
-                                 Content="游戏设置1"/>
+                                 Content="{Binding General1}"/>
                 </Grid>
                 <Grid Grid.Column="3" Width="130" Height="30">
                     <RadioButton GroupName="Settings" 
                                  Command="{Binding BodyViewCommand}" 
                                  CommandParameter="General2" 
                                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=General2}" 
-                                 Content="游戏设置2"/>
+                                 Content="{Binding General2}"/>
                 </Grid>
                 <Grid Grid.Column="4" Width="130" Height="30">
                     <RadioButton GroupName="Settings" 
                                  Command="{Binding BodyViewCommand}" 
                                  CommandParameter="Text" 
                                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Text}" 
-                                 Content="文本设置"/>
+                                 Content="{Binding Text}"/>
                 </Grid>
                 <Grid Grid.Column="5" Width="130" Height="30">
                     <RadioButton GroupName="Settings" 
                                  Command="{Binding BodyViewCommand}" 
                                  CommandParameter="Sound" 
                                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Sound}" 
-                                 Content="音频设置"/>
+                                 Content="{Binding Sound}"/>
                 </Grid>
                 <Grid Grid.Column="6" Width="130" Height="30">
                     <RadioButton GroupName="Settings" 
                                  Command="{Binding BodyViewCommand}" 
                                  CommandParameter="Dialog" 
                                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Dialog}" 
-                                 Content="确认对话框"/>
+                                 Content="{Binding Dialog}"/>
                 </Grid>
-                <Grid Grid.Column="7" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Mouse" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Mouse}" 
-                                 Content="鼠标设置"/>
-                </Grid>
-                <Grid Grid.Column="8" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Keyboard" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Keyboard}" 
-                                 Content="键盘设置"/>
-                </Grid>
-                <Grid Grid.Column="9" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Gamepad" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Gamepad}" 
-                                 Content="手柄设置"/>
-                </Grid>
+                <!--
+                 <Grid Grid.Column="7" Width="130" Height="30">
+     <RadioButton GroupName="Settings" 
+                  Command="{Binding BodyViewCommand}" 
+                  CommandParameter="Mouse" 
+                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Mouse}" 
+                  Content="鼠标设置"/>
+ </Grid>
+ <Grid Grid.Column="8" Width="130" Height="30">
+     <RadioButton GroupName="Settings" 
+                  Command="{Binding BodyViewCommand}" 
+                  CommandParameter="Keyboard" 
+                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Keyboard}" 
+                  Content="键盘设置"/>
+ </Grid>
+ <Grid Grid.Column="9" Width="130" Height="30">
+     <RadioButton GroupName="Settings" 
+                  Command="{Binding BodyViewCommand}" 
+                  CommandParameter="Gamepad" 
+                  IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Gamepad}" 
+                  Content="手柄设置"/>
+ </Grid>
+                -->
             </Grid>
         </Grid>
     </Viewbox>

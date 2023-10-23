@@ -1,26 +1,40 @@
 ﻿using Prism.Commands;
+using Prism.Events;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VisualNovelGame.Events;
+using VisualNovelGame.Services.Interfaces;
 using VisualNovelGame.ViewModels.SystemControlViewModel.ItemViewModels;
 
 namespace VisualNovelGame.ViewModels.SystemControlViewModel
 {
-    public class General2ViewModel
+    public class General2ViewModel : BindableBase
     {
         // 构造函数
-        public General2ViewModel() 
+        public General2ViewModel(IUIStringsService uIStringsService, IEventAggregator eventAggregator)
         {
+            _UIStringsService = uIStringsService;
+            eventAggregator.GetEvent<LanguageChangedEvent>().Subscribe(UpdateStrings);
 
-            GameSpeedItem = new ItemForSliderDisplayViewModel { ItemTitle = "游戏进行速度"};
+            InitialPageItems();
+        }
+
+        private readonly IUIStringsService _UIStringsService;
+
+        private void InitialPageItems()
+        {
+            GameSpeedItem = new ItemForSliderDisplayViewModel { ItemTitle = GameSpeed };
             GameSpeedItem.SliderDisplay.Add(new SliderDisplayViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = GameSpeedCommand });
 
             VoicePlaybackItem = new ItemForSliderDisplayViewModel { ItemTitle = "语音播放速度" };
             VoicePlaybackItem.SliderDisplay.Add(new SliderDisplayViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = VoicePlaybackCommand });
 
-            SkipSpeedItem = new ItemForSliderDisplayViewModel { ItemTitle = "快进速度调整" };
+            SkipSpeedItem = new ItemForSliderDisplayViewModel { ItemTitle = SkipSpeed };
             SkipSpeedItem.SliderDisplay.Add(new SliderDisplayViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = SkipSpeedCommand });
 
             SkipStyleItem = new ItemForRadioButtonViewModel { ItemTitle = "快进方式" };
@@ -167,6 +181,16 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
         private void ExecuteScreenshotSettingsCommand(object obj)
         {
             throw new NotImplementedException();
+        }
+
+
+        public string GameSpeed => _UIStringsService.GameSpeed;
+        public string SkipSpeed => _UIStringsService.SkipSpeed;
+
+        public void UpdateStrings()
+        {
+            RaisePropertyChanged(nameof(GameSpeed));
+            RaisePropertyChanged(nameof(SkipSpeed));
         }
 
     }

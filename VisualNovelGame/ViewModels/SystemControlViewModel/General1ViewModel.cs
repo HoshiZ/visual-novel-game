@@ -1,4 +1,6 @@
 ﻿using Prism.Commands;
+using Prism.Events;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,21 +9,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using SystemSettingsModel;
+using VisualNovelGame.Events;
+using VisualNovelGame.Services.Interfaces;
 using VisualNovelGame.ViewModels.SystemControlViewModel.ItemViewModels;
 
 namespace VisualNovelGame.ViewModels.SystemControlViewModel
 {
-    public class General1ViewModel
+    public class General1ViewModel : BindableBase
     {
-
         // 构造函数
-        public General1ViewModel() 
+        public General1ViewModel(IUIStringsService uIStringsService ,IEventAggregator eventAggregator)
+        {
+            _UIStringsService = uIStringsService;
+            eventAggregator.GetEvent<LanguageChangedEvent>().Subscribe(UpdateStrings);
+
+            InitialPageItems();
+        }
+
+        private readonly IUIStringsService _UIStringsService;
+
+        private void InitialPageItems()
         {
             AutoSkipOrjumpOverReadTextRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "自动跳过已读文本" };
             AutoSkipOrjumpOverReadTextRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = AutoSkipOrjumpOverReadTextCommand, CommandParameter = "ON", GroupName = "AutoSkipOrjumpOverReadText", IsChecked = false });
             AutoSkipOrjumpOverReadTextRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = AutoSkipOrjumpOverReadTextCommand, CommandParameter = "OFF", GroupName = "AutoSkipOrjumpOverReadText", IsChecked = false });
 
-            AutoSkipOrjumpSettingRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "已读文本自动跳过方式"};
+            AutoSkipOrjumpSettingRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "已读文本自动跳过方式" };
             AutoSkipOrjumpSettingRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "快进", DelegateCommand = AutoSkipOrjumpSettingCommand, CommandParameter = "ON", GroupName = "AutoSkipOrjumpSetting", IsChecked = false });
             AutoSkipOrjumpSettingRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "跳转", DelegateCommand = AutoSkipOrjumpSettingCommand, CommandParameter = "OFF", GroupName = "AutoSkipOrjumpSetting", IsChecked = false });
 
@@ -33,11 +46,11 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
             AutoCursorDefaultOptionRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "启动", DelegateCommand = AutoCursorDefaultOptionCommand, CommandParameter = "ON", GroupName = "AutoCursorDefaultOption", IsChecked = false });
             AutoCursorDefaultOptionRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "关闭", DelegateCommand = AutoCursorDefaultOptionCommand, CommandParameter = "OFF", GroupName = "AutoCursorDefaultOption", IsChecked = false });
 
-            HideMouseCursorRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "自动隐藏鼠标指针" };
-            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "不隐藏", DelegateCommand = HideMouseCursorCommand, CommandParameter = "ON", GroupName = "HideMouseCursor", IsChecked = false });
-            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "5 秒", DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
-            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "10 秒", DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
-            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "15 秒", DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
+            HideMouseCursorRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = HideMouseCursor };
+            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_A, DelegateCommand = HideMouseCursorCommand, CommandParameter = "ON", GroupName = "HideMouseCursor", IsChecked = false });
+            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_B, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
+            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_C, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
+            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_D, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
 
             SaveOrloadConfirmationRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "存档，读档时的鼠标操作" };
             SaveOrloadConfirmationRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "双击", DelegateCommand = SaveOrloadConfirmationCommand, CommandParameter = "ON", GroupName = "SaveOrloadConfirmation", IsChecked = false });
@@ -58,7 +71,6 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
             SuspendradioButtonsRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "自动继续游戏" };
             SuspendradioButtonsRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = SuspendradioButtonsCommand, CommandParameter = "ON", GroupName = "SuspendradioButtons", IsChecked = false });
             SuspendradioButtonsRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = SuspendradioButtonsCommand, CommandParameter = "OFF", GroupName = "SuspendradioButtons", IsChecked = false });
-
         }
 
         // 界面多选一项类
@@ -283,6 +295,21 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
                     MessageBox.Show("OFF");
                 }
             }
+        }
+
+        public string HideMouseCursor => _UIStringsService.HideMouseCursor;
+        public string HideMouseCursor_A => _UIStringsService.HideMouseCursor_A;
+        public string HideMouseCursor_B => _UIStringsService.HideMouseCursor_B;
+        public string HideMouseCursor_C => _UIStringsService.HideMouseCursor_C;
+        public string HideMouseCursor_D => _UIStringsService.HideMouseCursor_D;
+
+        public void UpdateStrings()
+        {
+            RaisePropertyChanged(nameof(HideMouseCursor));
+            RaisePropertyChanged(nameof(HideMouseCursor_B));
+            RaisePropertyChanged(nameof(HideMouseCursor_C));
+            RaisePropertyChanged(nameof(HideMouseCursor_A));
+            RaisePropertyChanged(nameof(HideMouseCursor_D));
         }
     }
 }
