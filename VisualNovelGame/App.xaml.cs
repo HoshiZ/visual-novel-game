@@ -91,6 +91,7 @@ namespace VisualNovelGame
             containerRegistry.Register<General2ViewModel>();
             containerRegistry.Register<TextViewModel>();
             containerRegistry.Register<SoundViewModel>();
+            containerRegistry.Register<FooterViewModel>();
 
             // 注册区域
             var regionManager = containerRegistry.GetContainer().Resolve<IRegionManager>();

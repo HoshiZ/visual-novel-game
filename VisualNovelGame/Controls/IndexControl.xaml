@@ -9,42 +9,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Background="{TemplateBinding Background}" >
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="SkyBlue"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="Black"/>
-                                <Setter TargetName="border" Property="BorderBrush" Value="SkyBlue"/>
-                                <Setter Property="Foreground" Value="White" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Width" Value="230" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="FontSize" Value="10" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="Cursor" Value="Hand" />
-        </Style>
+
     </UserControl.Resources>
 
-    <Grid Background="SkyBlue">
+    <Grid>
+        <Image Stretch="Fill" Source="pack://application:,,,/Resources/Scenes/index.png" />
+
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Orientation="Vertical" Margin="30,0,0,30" x:Name="ButtonItem">
-            <Button Content="{Binding NewGame}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="NewGame"/>
-            <Button Content="{Binding Load}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Load"/>
-            <Button Content="{Binding System}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="System"/>
-            <Button Content="{Binding Quit}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Quit"/>
-            <Button Content="{Binding LanguageChange}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Language"/>
+            <Button Margin="30" Content="{Binding NewGame}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="NewGame"/>
+            <Button Margin="30" Content="{Binding Load}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Load"/>
+            <Button Margin="30" Content="{Binding System}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="System"/>
+            <Button Margin="30" Content="{Binding Quit}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Quit"/>
+            <Button Margin="30"  Content="{Binding LanguageChange}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.IndexTogoCommand}" CommandParameter="Language"/>
         </StackPanel>
     </Grid>
 </UserControl>

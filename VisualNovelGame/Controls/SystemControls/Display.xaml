@@ -39,8 +39,10 @@
                     <ContentControl Grid.Row="4" Grid.Column="1" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding PanicButtonButtons}"/>
                     
                     <ContentControl Grid.Row="0" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForRadioButton}" Content="{Binding AlwaysOnTopButtons}"/>
+                    <!--
                     <ContentControl Grid.Row="1" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForToggleButton}" Content="{Binding UIDisplayButton}"/>
-                    <ContentControl Grid.Row="2" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding ChapterDisplaySliderDisplayWithButton}"/>
+<ContentControl Grid.Row="2" Grid.Column="3" ContentTemplate="{StaticResource ItemTemplateForSliderDisplayWithButton}" Content="{Binding ChapterDisplaySliderDisplayWithButton}"/>
+                    -->
 
                 </Grid>
 

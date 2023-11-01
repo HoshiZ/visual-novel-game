@@ -12,7 +12,7 @@ namespace VisualNovelGame.Converters
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length ==2)
+            if (values.Length == 2)
             {
                 return new Tuple<bool, object>((bool)values[0], values[1]);
             }

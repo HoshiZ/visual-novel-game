@@ -7,7 +7,7 @@
         xmlns:Views="clr-namespace:VisualNovelGame.Views"
         xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
-        Title="Summer Pocket" Height="{Binding Height}" Width="{Binding Width}"
+        Title="Visual Novel" Height="{Binding Height}" Width="{Binding Width}"
         Icon="pack://application:,,,/Resources/image/ico/favicon.ico"
         >
     <Grid>

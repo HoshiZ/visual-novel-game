@@ -39,6 +39,7 @@ namespace VisualNovelGame.ViewModels
 
             // 连接数据库
             CharacterRepository();
+            ExecuteLeftClickEvent();
         }
 
 
@@ -85,6 +86,7 @@ namespace VisualNovelGame.ViewModels
                 //FullImageSource = $"pack://application:,,,/Resources/image/full/{dialogues.ElementAt(_currentIndex).Name}_full.png";
                 FullImageSource = $"pack://application:,,,/Resources/image/full/{data.CharacterImages.ElementAt(0)}.png";
                 AvatarImageSource = $"pack://application:,,,/Resources/image/avatar/{data.CharacterAvatar}_avatar.png";
+                GameScene = $"pack://application:,,,/Resources/Scenes/{data.Scene}.png";
                 CharacterName = data.CharacterName;
             }
             else if (data == null)
@@ -146,6 +148,16 @@ namespace VisualNovelGame.ViewModels
             set
             {
                 SetProperty(ref _characterName, value);
+            }
+        }
+
+        private string _gameScene;
+        public string GameScene
+        {
+            get { return _gameScene; }
+            set
+            {
+                SetProperty(ref _gameScene, value);
             }
         }
     }

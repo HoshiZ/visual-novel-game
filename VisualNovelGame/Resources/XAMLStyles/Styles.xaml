@@ -5,25 +5,45 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <Border Name="rectangleBorder" Width="100" Height="50" CornerRadius="5" Background="Gray" BorderBrush="Black" BorderThickness="1">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Border Name="rectangleBorder" Width="200" Height="40" CornerRadius="5" Background="#179199" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="rectangleBorder" Property="Background" Value="LightBlue"/>
+                            <Setter TargetName="rectangleBorder" Property="Background" Value="#ffffff"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="rectangleBorder" Property="Background" Value="Green"/>
+                            <Setter TargetName="rectangleBorder" Property="Background" Value="#ff3b89"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="rectangleBorder" Property="Background" Value="DarkBlue"/>
+                            <Setter TargetName="rectangleBorder" Property="Background" Value="#ff3b89"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Setter Property="FontSize" Value="30" />
     </Style>
-    
-    
+
+    <Style TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="rectangleBorder" Width="200" Height="40" CornerRadius="5" Background="#179199" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="rectangleBorder" Property="Background" Value="#ffffff"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="rectangleBorder" Property="Background" Value="#ff3b89"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="25" />
+    </Style>
 
 </ResourceDictionary>

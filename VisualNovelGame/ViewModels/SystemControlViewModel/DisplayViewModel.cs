@@ -36,9 +36,9 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
             WindowTypeButtons.RadioButtons.Add(new RadioButtonViewModel { Content = WindowType_A, DelegateCommand = WindowTypeCommand, CommandParameter = "Windowed", GroupName = "WindowType", IsChecked = false });
             WindowTypeButtons.RadioButtons.Add(new RadioButtonViewModel { Content = WindowType_B, DelegateCommand = WindowTypeCommand, CommandParameter = "FullScreen", GroupName = "WindowType", IsChecked = false });
 
-            AspectRatioButtons = new ItemForRadioButtonViewModel { ItemTitle = "画面比例" };
-            AspectRatioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "16 : 9", DelegateCommand = AspectRatioCommand, CommandParameter = "16_9", GroupName = "AspectRatio", IsChecked = false });
-            AspectRatioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "4 : 3", DelegateCommand = AspectRatioCommand, CommandParameter = "4_3", GroupName = "AspectRatio", IsChecked = false });
+            //AspectRatioButtons = new ItemForRadioButtonViewModel { ItemTitle = "画面比例" };
+            //AspectRatioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "16 : 9", DelegateCommand = AspectRatioCommand, CommandParameter = "16_9", GroupName = "AspectRatio", IsChecked = false });
+            //AspectRatioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "4 : 3", DelegateCommand = AspectRatioCommand, CommandParameter = "4_3", GroupName = "AspectRatio", IsChecked = false });
 
             VisualEffectsButtons = new ItemForRadioButtonViewModel { ItemTitle = VisualEffects };
             VisualEffectsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_ON, DelegateCommand = VisualEffectsCommand, CommandParameter = "ON", GroupName = "VisualEffects", IsChecked = false });
@@ -55,32 +55,32 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
             PanicButtonButtons = new ItemForRadioButtonViewModel { ItemTitle = PanicButton };
             PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_A, DelegateCommand = PanicButtonCommand, CommandParameter = "Minimize", GroupName = "PanicButton", IsChecked = false });
             PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_B, DelegateCommand = PanicButtonCommand, CommandParameter = "Image1", GroupName = "PanicButton", IsChecked = false });
-            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_C, DelegateCommand = PanicButtonCommand, CommandParameter = "Image2", GroupName = "PanicButton", IsChecked = false });
-            PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_D, DelegateCommand = PanicButtonCommand, CommandParameter = "CustomImage", GroupName = "PanicButton", IsChecked = false });
+            //PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_C, DelegateCommand = PanicButtonCommand, CommandParameter = "Image2", GroupName = "PanicButton", IsChecked = false });
+            //PanicButtonButtons.RadioButtons.Add(new RadioButtonViewModel { Content = PanicButton_D, DelegateCommand = PanicButtonCommand, CommandParameter = "CustomImage", GroupName = "PanicButton", IsChecked = false });
 
             AlwaysOnTopButtons = new ItemForRadioButtonViewModel { ItemTitle = AlwaysOnTop };
             AlwaysOnTopButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_ON, DelegateCommand = AlwaysOnTopCommand, CommandParameter = "ON", GroupName = "AlwaysOnTop", IsChecked = false });
             AlwaysOnTopButtons.RadioButtons.Add(new RadioButtonViewModel { Content = Button_OFF, DelegateCommand = AlwaysOnTopCommand, CommandParameter = "OFF", GroupName = "AlwaysOnTop", IsChecked = false });
 
-            UIDisplayButton = new ItemForToggleButtonViewModel { ItemTitle = UIDisplay };
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_A, DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressIcon", IsChecked = false });
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_B, DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressMeter", IsChecked = false });
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_C, DelegateCommand = UIDisplayCommand, CommandParameter = "WindowMenu", IsChecked = false });
-            UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_D, DelegateCommand = UIDisplayCommand, CommandParameter = "TouchUI", IsChecked = false });
+            //UIDisplayButton = new ItemForToggleButtonViewModel { ItemTitle = UIDisplay };
+            //UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_A, DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressIcon", IsChecked = false });
+            //UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_B, DelegateCommand = UIDisplayCommand, CommandParameter = "ProgressMeter", IsChecked = false });
+            //UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_C, DelegateCommand = UIDisplayCommand, CommandParameter = "WindowMenu", IsChecked = false });
+            //UIDisplayButton.ToggleButtons.Add(new ToggleButtonViewModel { Content = UIDisplay_D, DelegateCommand = UIDisplayCommand, CommandParameter = "TouchUI", IsChecked = false });
 
-            ChapterDisplaySliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = ChapterDisplay };
-            ChapterDisplaySliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = ChapterDisplayCommand, ButtonCommand = null });
+            //ChapterDisplaySliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = ChapterDisplay };
+            //ChapterDisplaySliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = ChapterDisplayCommand, ButtonCommand = null });
 
-            MusicTitleDisplaySliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "背景音乐曲名显示时间" };
-            MusicTitleDisplaySliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = MusicTitleDisplayCommand, ButtonCommand = null });
+            //MusicTitleDisplaySliderDisplayWithButton = new ItemForSliderDisplayWithButtonViewModel { ItemTitle = "背景音乐曲名显示时间" };
+            //MusicTitleDisplaySliderDisplayWithButton.SliderDisplayWithButtons.Add(new SliderDisplayWithButtonViewModel { CurrentValue = 30, Maximum = 100, Minimum = 0, Interval = 1, SliderCommand = MusicTitleDisplayCommand, ButtonCommand = null });
 
-            CharacterPortraitsButtons = new ItemForRadioButtonViewModel { ItemTitle = "显示说话人表情" };
-            CharacterPortraitsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = CharacterPortraitsCommand, CommandParameter = "ON", GroupName = "ShowPopUpWindow", IsChecked = false });
-            CharacterPortraitsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = CharacterPortraitsCommand, CommandParameter = "OFF", GroupName = "ShowPopUpWindow", IsChecked = false });
+            //CharacterPortraitsButtons = new ItemForRadioButtonViewModel { ItemTitle = "显示说话人表情" };
+            //CharacterPortraitsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O N", DelegateCommand = CharacterPortraitsCommand, CommandParameter = "ON", GroupName = "ShowPopUpWindow", IsChecked = false });
+            //CharacterPortraitsButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "O F F", DelegateCommand = CharacterPortraitsCommand, CommandParameter = "OFF", GroupName = "ShowPopUpWindow", IsChecked = false });
 
-            ShowPopUpWindowButtons = new ItemForRadioButtonViewModel { ItemTitle = "显示弹窗" };
-            ShowPopUpWindowButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "鼠标悬停", DelegateCommand = ShowPopUpWindowCommand, CommandParameter = "ON", GroupName = "ShowPopUpWindow", IsChecked = false });
-            ShowPopUpWindowButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "右击", DelegateCommand = ShowPopUpWindowCommand, CommandParameter = "OFF", GroupName = "ShowPopUpWindow", IsChecked = false });
+            //ShowPopUpWindowButtons = new ItemForRadioButtonViewModel { ItemTitle = "显示弹窗" };
+            //ShowPopUpWindowButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "鼠标悬停", DelegateCommand = ShowPopUpWindowCommand, CommandParameter = "ON", GroupName = "ShowPopUpWindow", IsChecked = false });
+            //ShowPopUpWindowButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "右击", DelegateCommand = ShowPopUpWindowCommand, CommandParameter = "OFF", GroupName = "ShowPopUpWindow", IsChecked = false });
         }
 
         // 服务

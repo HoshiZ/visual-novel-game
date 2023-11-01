@@ -34,7 +34,7 @@ namespace fake
             public InitialMethod(VisualNovelGameDBContext visualNovelGameDBContext)
             {
                 this.context = visualNovelGameDBContext;
-                _characterList = GetRandomCharacterSpeakList();
+
                 jsonContent = File.ReadAllText(_jsonPath);
                 _initialValues = JsonConvert.DeserializeObject<InitialValue>(jsonContent);
             }
@@ -42,10 +42,10 @@ namespace fake
             public void AllInitial()
             {
                 Console.WriteLine("初始化开始");
+                InitialCharacter();
+                _characterList = GetRandomCharacterSpeakList();
                 InitialAudio();
                 InitialBGM();
-                InitialCharacter();
-                
                 InitialCharacterImage();
                 InitialOptionCollection();
                 InitialChoiceOption();
@@ -280,8 +280,8 @@ namespace fake
                         var JPName = tancemiao.JPName;
                         var character = GetRandomCharacter();
                         string cn_text = $"第 {i} 行文本，角色 {CNName}说话了。";
-                        string en_text = $"Line {i}, character {JPName} is speaking.";
-                        string jp_text = $"第 {i} 行のテキスト、キャラクター {ENName} が話しています。";
+                        string en_text = $"Line {i}, character {ENName} is speaking.";
+                        string jp_text = $"第 {i} 行のテキスト、キャラクター {JPName} が話しています。";
                         
                         context.MainlineTexts.Add(new MainlineText { CNText = cn_text, ENText = en_text, JPText = jp_text });
                     }

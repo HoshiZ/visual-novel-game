@@ -36,6 +36,13 @@
     <None Remove="Resources\image\litangdingzhen_full.png" />
     <None Remove="Resources\image\tsubasa_full.png" />
     <None Remove="Resources\Music\BEYOND.mp3" />
+    <None Remove="Resources\Scenes\index.png" />
+    <None Remove="Resources\Scenes\Scene_1.png" />
+    <None Remove="Resources\Scenes\Scene_2.png" />
+    <None Remove="Resources\Scenes\Scene_3.png" />
+    <None Remove="Resources\Scenes\Scene_4.png" />
+    <None Remove="Resources\Scenes\Scene_5.png" />
+    <None Remove="Resources\Scenes\Scene_6.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -93,6 +100,13 @@
     <Resource Include="Resources\image\full\Tsubasa Kido_1.png" />
     <Resource Include="Resources\image\full\Tsubasa Kido_2.png" />
     <Resource Include="Resources\image\ico\favicon.ico" />
+    <Resource Include="Resources\Scenes\index.png" />
+    <Resource Include="Resources\Scenes\Scene_1.png" />
+    <Resource Include="Resources\Scenes\Scene_2.png" />
+    <Resource Include="Resources\Scenes\Scene_3.png" />
+    <Resource Include="Resources\Scenes\Scene_4.png" />
+    <Resource Include="Resources\Scenes\Scene_5.png" />
+    <Resource Include="Resources\Scenes\Scene_6.png" />
   </ItemGroup>
 
   <ItemGroup>

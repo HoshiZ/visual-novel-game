@@ -10,28 +10,7 @@
     <UserControl.Resources>
         <local1:SettingToBoolConverter x:Key="SettingToBoolConverter" />
 
-        <Style TargetType="RadioButton">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="RadioButton">
-                        <Border Margin="20 0 20 0" Name="rectangleBorder"  CornerRadius="5" Background="Gray" BorderBrush="Black" BorderThickness="1">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="rectangleBorder" Property="Background" Value="LightBlue"/>
-                            </Trigger>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="rectangleBorder" Property="Background" Value="Green"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="rectangleBorder" Property="Background" Value="DarkBlue"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+
     </UserControl.Resources>
     <Viewbox>
         <Grid>
@@ -55,53 +34,67 @@
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Basic" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Basic}" 
-                                 Content="{Binding Basic}" />
+                    <Viewbox Margin="2">
+                        <RadioButton GroupName="Settings" 
+                            Command="{Binding BodyViewCommand}" 
+                            CommandParameter="Basic" 
+                            IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Basic}" 
+                            Content="{Binding Basic}" />
+                    </Viewbox>
                 </Grid>
                 <Grid Grid.Column="1" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Display" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Display}" 
-                                 Content="{Binding Display}"/>
+                    <Viewbox Margin="2">
+                        <RadioButton GroupName="Settings" 
+             Command="{Binding BodyViewCommand}" 
+             CommandParameter="Display" 
+             IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Display}" 
+             Content="{Binding Display}"/>
+                    </Viewbox>
                 </Grid>
                 <Grid Grid.Column="2" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="General1"
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=General1}" 
-                                 Content="{Binding General1}"/>
+                    <Viewbox Margin="2">
+                        <RadioButton GroupName="Settings" 
+             Command="{Binding BodyViewCommand}" 
+             CommandParameter="General1"
+             IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=General1}" 
+             Content="{Binding General1}"/>
+                    </Viewbox>
                 </Grid>
                 <Grid Grid.Column="3" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="General2" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=General2}" 
-                                 Content="{Binding General2}"/>
+                    <Viewbox Margin="2">
+                        <RadioButton GroupName="Settings" 
+             Command="{Binding BodyViewCommand}" 
+             CommandParameter="General2" 
+             IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=General2}" 
+             Content="{Binding General2}"/>
+                    </Viewbox>
                 </Grid>
                 <Grid Grid.Column="4" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Text" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Text}" 
-                                 Content="{Binding Text}"/>
+                    <Viewbox Margin="2">
+                        <RadioButton GroupName="Settings" 
+             Command="{Binding BodyViewCommand}" 
+             CommandParameter="Text" 
+             IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Text}" 
+             Content="{Binding Text}"/>
+                    </Viewbox>
                 </Grid>
                 <Grid Grid.Column="5" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Sound" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Sound}" 
-                                 Content="{Binding Sound}"/>
+                    <Viewbox Margin="2">
+                        <RadioButton GroupName="Settings" 
+             Command="{Binding BodyViewCommand}" 
+             CommandParameter="Sound" 
+             IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Sound}" 
+             Content="{Binding Sound}"/>
+                    </Viewbox>
                 </Grid>
                 <Grid Grid.Column="6" Width="130" Height="30">
-                    <RadioButton GroupName="Settings" 
-                                 Command="{Binding BodyViewCommand}" 
-                                 CommandParameter="Dialog" 
-                                 IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Dialog}" 
-                                 Content="{Binding Dialog}"/>
+                    <Viewbox Margin="2">
+                        <RadioButton GroupName="Settings" 
+             Command="{Binding BodyViewCommand}" 
+             CommandParameter="Dialog" 
+             IsChecked="{Binding SelectedSetting, Converter={StaticResource SettingToBoolConverter}, ConverterParameter=Dialog}" 
+             Content="{Binding Dialog}"/>
+                    </Viewbox>
                 </Grid>
                 <!--
                  <Grid Grid.Column="7" Width="130" Height="30">

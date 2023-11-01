@@ -16,7 +16,7 @@ namespace VisualNovelGameDB.Services
     {
         private readonly IVNGRepository _repository;
         private GameDataModels _gameDataModels;
-        private int _currentIndex = 1;
+        private int _currentIndex = 0;
         private int _maxIndex = 100;
         private int _isInitial = 0;
         public VNCService() 
@@ -48,7 +48,7 @@ namespace VisualNovelGameDB.Services
                 Text = _repository.GetTextFromDialog(mainlineDialogue, lan),
                 HaveRead = _repository.GetHaveReadFromDialog(mainlineDialogue),
                 Chapter = _repository.GetChapterFromDialog(mainlineDialogue),
-                CharacterAvatar = _repository.GetCharacterNameFromDialog(mainlineDialogue, lan)
+                CharacterAvatar = _repository.GetCharacterNameFromDialog(mainlineDialogue, "en")
             };
             _gameDataModels = result;
         }

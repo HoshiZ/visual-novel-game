@@ -49,8 +49,8 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
             HideMouseCursorRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = HideMouseCursor };
             HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_A, DelegateCommand = HideMouseCursorCommand, CommandParameter = "ON", GroupName = "HideMouseCursor", IsChecked = false });
             HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_B, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
-            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_C, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
-            HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_D, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
+            //HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_C, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
+            //HideMouseCursorRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = HideMouseCursor_D, DelegateCommand = HideMouseCursorCommand, CommandParameter = "OFF", GroupName = "HideMouseCursor", IsChecked = false });
 
             SaveOrloadConfirmationRadioButtons = new ItemForRadioButtonViewModel { ItemTitle = "存档，读档时的鼠标操作" };
             SaveOrloadConfirmationRadioButtons.RadioButtons.Add(new RadioButtonViewModel { Content = "双击", DelegateCommand = SaveOrloadConfirmationCommand, CommandParameter = "ON", GroupName = "SaveOrloadConfirmation", IsChecked = false });

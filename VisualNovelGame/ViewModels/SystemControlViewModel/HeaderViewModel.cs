@@ -96,13 +96,13 @@ namespace VisualNovelGame.ViewModels.SystemControlViewModel
 
         public void UpdateStrings()
         {
-            RaisePropertyChanged(nameof(Basic));
-            RaisePropertyChanged(nameof(Display));
-            RaisePropertyChanged(nameof(General1));
-            RaisePropertyChanged(nameof(General2));
-            RaisePropertyChanged(nameof(Text));
-            RaisePropertyChanged(nameof(Sound));
-            RaisePropertyChanged(nameof(Dialog));
+            //RaisePropertyChanged(nameof(Basic));
+            //RaisePropertyChanged(nameof(Display));
+            //RaisePropertyChanged(nameof(General1));
+            //RaisePropertyChanged(nameof(General2));
+            //RaisePropertyChanged(nameof(Text));
+            //RaisePropertyChanged(nameof(Sound));
+            //RaisePropertyChanged(nameof(Dialog));
         }
     }
 }

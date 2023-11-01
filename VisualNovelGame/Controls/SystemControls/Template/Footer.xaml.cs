@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VisualNovelGame.ViewModels.SystemControlViewModel;
 
 namespace VisualNovelGame.Controls.SystemControls.Template
 {
@@ -26,10 +27,11 @@ namespace VisualNovelGame.Controls.SystemControls.Template
         private readonly IRegionManager _regionManager;
 
         // 构造函数
-        public Footer(IRegionManager regionManager)
+        public Footer(IRegionManager regionManager, FooterViewModel footerViewModel)
         {
             InitializeComponent();
             _regionManager = regionManager;
+            DataContext = footerViewModel;
         }
     }
 }

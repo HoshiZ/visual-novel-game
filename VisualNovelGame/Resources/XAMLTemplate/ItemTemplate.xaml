@@ -8,21 +8,20 @@
     <converter:ToggleButtonParametersConverter x:Key="ToggleButtonParametersConverter" />
     
     <DataTemplate x:Key="ItemTemplateForRadioButton">
-        <Border BorderBrush="Green" BorderThickness="0 2 0 0">
+        <Border BorderBrush="#179199" BorderThickness="0 2 0 0">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="35*" />
+                    <RowDefinition Height="50*" />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="45*" />
                     <ColumnDefinition Width="167*" />
                     <ColumnDefinition Width="117*" />
                     <ColumnDefinition Width="291*" />
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="15*" />
-                    <RowDefinition Height="20*" />
-                    <RowDefinition Height="35*" />
-                    <RowDefinition Height="50*" />
-                </Grid.RowDefinitions>
-
                 <Grid Grid.Row="0" Grid.Column="1">
                     <Viewbox>
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ItemTitle}"></TextBlock>
@@ -39,7 +38,7 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <RadioButton Content="{Binding Content}"
+                                    <RadioButton Content="{Binding Content}" Margin="2"
                                          Command="{Binding DelegateCommand}"
                                          CommandParameter="{Binding CommandParameter}"
                                          IsChecked="{Binding IsChecked, Mode=TwoWay}"
@@ -55,7 +54,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ItemTemplateForSliderDisplayWithButton">
-        <Border BorderBrush="Green" BorderThickness="0 2 0 0">
+        <Border BorderBrush="#179199" BorderThickness="0 2 0 0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60*" />
@@ -114,9 +113,11 @@
                                     <RowDefinition Height="80*" />
                                     <!-- 间隔 -->
                                 </Grid.RowDefinitions>
+                                <!--
                                 <Viewbox Grid.Column="1" Grid.Row="0">
                                     <Button Command="{Binding ButtonCommand}">A</Button>
                                 </Viewbox>
+                                -->
                                 <Slider Grid.Column="3" Grid.Row="0" Value="{Binding CurrentValue, Mode=TwoWay}"
                                                 Maximum="{Binding Maximum}"
                                                 Minimum="{Binding Minimum}"
@@ -137,7 +138,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ItemTemplateForSliderDisplay">
-        <Border BorderBrush="Green" BorderThickness="0 2 0 0">
+        <Border BorderBrush="#179199" BorderThickness="0 2 0 0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60*" />
@@ -168,7 +169,7 @@
                     </Viewbox>
                 </Grid>
 
-                <ItemsControl Grid.Row="1" ItemsSource="{Binding SliderDisplayWithButtons}">
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding SliderDisplay}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -216,7 +217,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ItemTemplateForToggleButton">
-        <Border BorderBrush="Green" BorderThickness="0 2 0 0">
+        <Border BorderBrush="#179199" BorderThickness="0 2 0 0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="45*" />
@@ -247,7 +248,7 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <ToggleButton Content="{Binding Content}"
+                                    <ToggleButton Content="{Binding Content}" Margin="2"
                                          IsChecked="{Binding IsChecked, Mode=TwoWay}"
                                          Command="{Binding DelegateCommand}"
                                          >
