@@ -7,9 +7,9 @@
 
 ## 预览
 
-![Example Image1](./Resources/pictures/a1.png)
-![Example Image2](./Resources/pictures/a2.png)
-![Example Image3](./Resources/pictures/a3.png)
+![Example Image1](./VisualNovelGame/Resources/pictures/a1.png)
+![Example Image2](./VisualNovelGame/Resources/pictures/a2.png)
+![Example Image3](./VisualNovelGame/Resources/pictures/a3.png)
 
 
 
