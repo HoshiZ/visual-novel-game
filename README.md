@@ -7,7 +7,9 @@
 
 ## 预览
 
-- 假装这是一个截图
+![Example Image1](./Resources/pictures/a1.png)
+![Example Image2](./Resources/pictures/a2.png)
+![Example Image3](./Resources/pictures/a3.png)
 
 
 
